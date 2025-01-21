@@ -1,0 +1,16 @@
+{% extends "_base.html" %}
+
+{% block title %}خروج{% endblock %}
+
+{% block content %}
+<h2>خروج از سایت</h2>
+
+<p>آیا مطمئن هستید که می‌خواهید از سایت خارج شوید؟</p>
+
+<form method="post" action="">
+    {% csrf_token %}
+    <button type="submit">بله، خارج شوید</button>
+</form>
+
+<p><a href="/">بازگشت به صفحه اصلی</a></p>
+{% endblock %}
