@@ -145,6 +145,7 @@ ACCOUNT_EMAIL_VERIFICATION = "none"  # برای تست
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"
 LOGIN_URL = "account_login"
+ACCOUNT_SESSION_REMEMBER = True
 
 AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend",
@@ -154,3 +155,5 @@ AUTHENTICATION_BACKENDS = [
 ACCOUNT_FORMS = {
     "signup": "accounts.forms.CustomSignupForm",
 }
+# Django Allauth Configuration
+ACCOUNT_ADAPTER = "accounts.forms.CustomAccountAdapter"

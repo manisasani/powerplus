@@ -8,13 +8,26 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 class CustomUser(AbstractUser):
     GENDER = (("M", "Male"), ("F", "Female"))
     email = models.EmailField(unique=True)
-    age = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(100)])
-    gender = models.CharField(max_length=1, choices=GENDER)
+    age = models.IntegerField(
+        validators=[MinValueValidator(1), MaxValueValidator(100)],
+          null=False,
+          blank=False
+    )
+    gender = models.CharField(
+        max_length=1, 
+        choices=GENDER,
+        null=False,
+        blank=False,
+        )
     height = models.IntegerField(
-        validators=[MinValueValidator(50), MaxValueValidator(300)]
+        validators=[MinValueValidator(50), MaxValueValidator(300)],
+        null=False,
+        blank=False,
     )
     weight = models.IntegerField(
-        validators=[MinValueValidator(10), MaxValueValidator(500)]
+        validators=[MinValueValidator(10), MaxValueValidator(500)],
+        null=False,
+        blank=False,
     )
 
 
