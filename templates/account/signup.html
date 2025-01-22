@@ -1,14 +1,112 @@
 {% extends "_base.html" %}
-{% block title %}ثبت‌نام{% endblock %}
+{% load static %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
 
 {% block content %}
-<h2>ثبت‌نام در سایت</h2>
+<section>
+    {% for i in "x"|rjust:"200" %}
+    <span></span>
+    {% endfor %}
 
-<form method="post" action="{% url 'account_signup' %}">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">ثبت‌نام</button>
-</form>
+    <div class="signin signup">
+        <div class="content">
+            <h2>Sign Up</h2>
+            <div class="form">
+                <form method="post" action="{% url 'account_signup' %}">
+                    {% csrf_token %}
+                    
+                    {% if form.non_field_errors %}
+                    <div class="error-message">
+                        {% for error in form.non_field_errors %}
+                            {{ error }}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
 
-<p>اگر قبلاً حساب کاربری دارید، <a href="{% url 'account_login' %}">وارد شوید</a>.</p>
+                    <div class="inputBox">
+                        <input type="email" name="{{ form.email.name }}" id="{{ form.email.id_for_label }}" required>
+                        <i>Email</i>
+                        {% if form.email.errors %}
+                        <div class="error-message">{{ form.email.errors.0 }}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="inputBox">
+                        <input type="text" name="{{ form.first_name.name }}" id="{{ form.first_name.id_for_label }}" required>
+                        <i>First Name</i>
+                        {% if form.first_name.errors %}
+                        <div class="error-message">{{ form.first_name.errors.0 }}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="inputBox">
+                        <input type="number" name="{{ form.age.name }}" id="{{ form.age.id_for_label }}" min="1" max="100" required>
+                        <i>Age</i>
+                        {% if form.age.errors %}
+                        <div class="error-message">{{ form.age.errors.0 }}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="select-box">
+                        <select name="{{ form.gender.name }}" id="{{ form.gender.id_for_label }}" required>
+                            <option value="" disabled selected></option>
+                            {% for value, label in form.gender.field.choices %}
+                            <option value="{{ value }}">{{ label }}</option>
+                            {% endfor %}
+                        </select>
+                        {% if form.gender.errors %}
+                        <div class="error-message">{{ form.gender.errors.0 }}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="inputBox">
+                        <input type="number" name="{{ form.height.name }}" id="{{ form.height.id_for_label }}" min="50" max="300" required>
+                        <i>Height (cm)</i>
+                        {% if form.height.errors %}
+                        <div class="error-message">{{ form.height.errors.0 }}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="inputBox">
+                        <input type="number" name="{{ form.weight.name }}" id="{{ form.weight.id_for_label }}" min="10" max="500" required>
+                        <i>Weight (kg)</i>
+                        {% if form.weight.errors %}
+                        <div class="error-message">{{ form.weight.errors.0 }}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="inputBox">
+                        <input type="password" name="{{ form.password1.name }}" id="{{ form.password1.id_for_label }}" required>
+                        <i>Password</i>
+                        {% if form.password1.errors %}
+                        <div class="error-message">{{ form.password1.errors.0 }}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="inputBox">
+                        <input type="password" name="{{ form.password2.name }}" id="{{ form.password2.id_for_label }}" required>
+                        <i>Confirm Password</i>
+                        {% if form.password2.errors %}
+                        <div class="error-message">{{ form.password2.errors.0 }}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="links">
+                        <a href="{% url 'account_login' %}">Already have an account?</a>
+                        <a href="{% url 'account_login' %}">Sign In</a>
+                    </div>
+                    <br>
+                    <div class="inputBox">
+                        <input type="submit" value="Sign Up">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}

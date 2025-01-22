@@ -1,11 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html dir="rtl" lang="fa">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
+    
+    {% load static %}
+    <!-- استایل‌های پایه -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+    <!-- بلاک برای اضافه کردن استایل‌های اضافی در صفحات دیگر -->
+    {% block extra_css %}{% endblock %}
 </head>
 <body>
     {% if messages %}
-    <div>
+    <div class="messages">
         {% for message in messages %}
         <div{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</div>
         {% endfor %}

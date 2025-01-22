@@ -1,15 +1,62 @@
 {% extends "_base.html" %}
+{% load static %}
 
-{% block title %}ورود{% endblock %}
+{% block title %}Sign In{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
 
 {% block content %}
-<h2>ورود به سایت</h2>
+<section>
+    {% for i in "x"|rjust:"200" %}
+    <span></span>
+    {% endfor %}
 
-<form method="post" action="{% url 'account_login' %}">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">ورود</button>
-</form>
-
-<p>اگر حساب کاربری ندارید، <a href="{% url 'account_signup' %}">ثبت‌نام کنید</a>.</p>
+    <div class="signin">
+        <div class="content">
+            <h2>Sign In</h2>
+            <div class="form">
+                <form method="post" action="{% url 'account_login' %}">
+                    {% csrf_token %}
+                    
+                    {% if form.non_field_errors %}
+                    <div class="error-message">
+                        {% for error in form.non_field_errors %}
+                            {{ error }}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    <br>
+                    <div class="inputBox">
+                        <input type="text" name="{{ form.login.name }}" id="{{ form.login.id_for_label }}" required>
+                        <i>Email</i>
+                        <br>
+                        {% if form.login.errors %}
+                        <div class="error-message">{{ form.login.errors.0 }}</div>
+                        {% endif %}
+                    </div>
+                    <br>
+                    <div class="inputBox">
+                        <input type="password" name="{{ form.password.name }}" id="{{ form.password.id_for_label }}" required>
+                        <i>Password</i>
+                        <br>
+                        {% if form.password.errors %}
+                        <div class="error-message">{{ form.password.errors.0 }}</div>
+                        {% endif %}
+                    </div>
+                    <br>
+                    <div class="links">
+                        <a href="{% url 'account_reset_password' %}">Forgot Password</a>
+                        <a href="{% url 'account_signup' %}">Signup</a>
+                    </div>
+                    <br>
+                    <div class="inputBox">
+                        <input type="submit" value="Login">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}

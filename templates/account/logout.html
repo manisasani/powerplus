@@ -1,16 +1,46 @@
 {% extends "_base.html" %}
+{% load static %}
 
-{% block title %}خروج{% endblock %}
+{% block title %}Sign Out{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
 
 {% block content %}
-<h2>خروج از سایت</h2>
+<section>
+    {% for i in "x"|rjust:"200" %}
+    <span></span>
+    {% endfor %}
 
-<p>آیا مطمئن هستید که می‌خواهید از سایت خارج شوید؟</p>
+    <div class="signin">
+        <div class="content">
+            <h2>Sign Out</h2>
+            <div class="form">
+                <form method="post" action="{% url 'account_logout' %}">
+                    {% csrf_token %}
+                    
+                    {% if form.non_field_errors %}
+                    <div class="error-message">
+                        {% for error in form.non_field_errors %}
+                            {{ error }}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
 
-<form method="post" action="">
-    {% csrf_token %}
-    <button type="submit">بله، خارج شوید</button>
-</form>
+                    <p class="logout-message">?Are you sure you want to sign out</p>
 
-<p><a href="/">بازگشت به صفحه اصلی</a></p>
+                    <div class="links">
+                        <a href="/">Cancel</a>
+                        <a href="{% url 'account_login' %}">Sign In</a>
+                    </div>
+                    <br>
+                    <div class="inputBox">
+                        <input type="submit" value="Sign Out">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}
