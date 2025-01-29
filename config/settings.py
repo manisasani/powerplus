@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     # local apps
     "accounts",
     'pages',
+    'dietplan',
 ]
 SITE_ID = 1
 
