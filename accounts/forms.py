@@ -1,6 +1,6 @@
 from django import forms
 from allauth.account.forms import SignupForm
-from .models import CustomUser, Profile
+from .models import CustomUser, Profile, DietPlanInfo, WorkoutPlanInfo
 from django.core.validators import MinValueValidator, MaxValueValidator
 from allauth.account.adapter import DefaultAccountAdapter
 
@@ -61,8 +61,3 @@ class CustomSignupForm(SignupForm):
         user = super().save(request)
         return user
 
-
-class ProfileForm(forms.ModelForm):
-    class Meta:
-        model = Profile
-        fields = ("activity_level", "experience_level", "diet_goal", "plan_goal")
