@@ -1,0 +1,145 @@
+.activity-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: #000000;
+}
+.activity-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: #000000; /* مشکی خالص */
+}
+
+.activity-form-wrapper {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 3rem;
+    width: 100%;
+    max-width: 700px; /* کوچکتر کردن کارت‌ها */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.activity-form-wrapper h2 {
+    color: #ffc451; /* زرد سایت */
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    font-weight: 600;
+}
+
+.activity-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem; /* فاصله کمتر بین کارت‌ها */
+    margin-bottom: 2rem;
+}
+
+.activity-card {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 15px;
+    padding: 1.3rem; /* پدینگ کمتر */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.activity-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.07);
+    border-color: #ffc451;
+}
+
+.activity-card input[type="radio"] {
+    display: none;
+}
+
+.activity-card label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+.activity-card i {
+    font-size: 2.2rem;
+    color: #ffc451;
+    transition: transform 0.3s ease;
+}
+
+.activity-card span {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.activity-card small {
+    color: #aaa;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+.activity-card input[type="radio"]:checked + label i {
+    transform: scale(1.2);
+}
+
+.activity-card input[type="radio"]:checked + label span {
+    color: #ffc451;
+}
+
+.submit-btn {
+    background: #ffc451;
+    color: #000000;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 250px;
+    margin: 0 auto;
+    display: block;
+    font-weight: 600;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 196, 81, 0.4);
+    background: #ffd474;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.activity-card {
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.activity-card:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.activity-card:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.activity-card:nth-child(4) {
+    animation-delay: 0.3s;
+}

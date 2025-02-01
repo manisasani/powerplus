@@ -1,0 +1,337 @@
+{% extends '_base.html' %}
+{% load static %}
+{% load custom_filters %}
+{% block content %}
+<div class="diet-plan-container">
+    <!-- User Profile Section -->
+    <div class="profile-section">
+        <div class="section-title">
+            <i class="ph ph-user"></i>
+            <h2>Personal Information</h2>
+        </div>
+        <div class="profile-grid">
+            <div class="profile-card">
+                <span class="label">Name</span>
+                <span class="value">{{ user.username|first_part}}</span>
+            </div>
+            <div class="profile-card">
+                <span class="label">Age</span>
+                <span class="value">{{ user.age }} years</span>
+            </div>
+            <div class="profile-card">
+                <span class="label">Gender</span>
+                <span class="value">{{ user.get_gender_display }}</span>
+            </div>
+            <div class="profile-card">
+                <span class="label">Height</span>
+                <span class="value">{{ user.height }} cm</span>
+            </div>
+            <div class="profile-card">
+                <span class="label">Weight</span>
+                <span class="value">{{ user.weight }} kg</span>
+            </div>
+            <div class="profile-card">
+                <span class="label">Goal</span>
+                <span class="value">{{ user.diet_info.get_diet_goal_display }}</span>
+            </div>
+            <div class="profile-card">
+                <span class="label">Activity Level</span>
+                <span class="value">{{ user.diet_info.get_activity_level_display }}</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nutrition Summary -->
+    <div class="nutrition-section">
+        <div class="section-title">
+            <i class="ph ph-chart-pie"></i>
+            <h2>Daily Nutrition Summary</h2>
+        </div>
+        <div class="nutrition-cards">
+            <div class="calorie-card">
+                <span class="main-value">{{ daily_calories|floatformat:0 }}</span>
+                <span class="label">Daily Calories</span>
+                <div class="range">
+                    {% comment %} <small>Target Range: {{ diet_plan.calorie_range_min }} - {{ diet_plan.calorie_range_max }}</small> {% endcomment %}
+                </div>
+            </div>
+            <div class="macro-grid">
+                <div class="macro-card protein">
+                    <i class="ph ph-egg"></i>
+                    <div class="macro-info">
+                        <span class="percentage">{{ diet_plan.protein_percentage }}%</span>
+                        <span class="grams">{{ macros.protein }}g</span>
+                        <span class="label">Protein</span>
+                    </div>
+                </div>
+                <div class="macro-card carbs">
+                    <i class="ph ph-bread"></i>
+                    <div class="macro-info">
+                        <span class="percentage">{{ diet_plan.carbs_percentage }}%</span>
+                        <span class="grams">{{ macros.carbs }}g</span>
+                        <span class="label">Carbs</span>
+                    </div>
+                </div>
+                <div class="macro-card fats">
+                    <i class="ph ph-drop"></i>
+                    <div class="macro-info">
+                        <span class="percentage">{{ diet_plan.fat_percentage }}%</span>
+                        <span class="grams">{{ macros.fats }}g</span>
+                        <span class="label">Fats</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Meal Plan Section -->
+    <div class="meals-section">
+        <div class="section-title">
+            <i class="ph ph-fork-knife"></i>
+            <h2>Daily Meal Plan</h2>
+        </div>
+        <div class="meal-timeline">
+            <div class="meal-card">
+                <div class="time">6:00 - 8:00</div>
+                <div class="meal-content">
+                    <h3><i class="ph ph-sun"></i> Breakfast</h3>
+                    <div class="meal-details">{{ diet_plan.breakfast|linebreaks }}</div>
+                </div>
+            </div>
+
+            <div class="meal-card">
+                <div class="time">10:00 - 11:00</div>
+                <div class="meal-content">
+                    <h3><i class="ph ph-cookie"></i> Morning Snack</h3>
+                    <div class="meal-details">{{ diet_plan.snacks|linebreaks }}</div>
+                </div>
+            </div>
+
+            <div class="meal-card">
+                <div class="time">13:00 - 14:00</div>
+                <div class="meal-content">
+                    <h3><i class="ph ph-bowl-food"></i> Lunch</h3>
+                    <div class="meal-details">{{ diet_plan.lunch|linebreaks }}</div>
+                </div>
+            </div>
+
+            <div class="meal-card">
+                <div class="time">16:00 - 17:00</div>
+                <div class="meal-content">
+                    <h3><i class="ph ph-apple"></i> Afternoon Snack</h3>
+                    <div class="meal-details">{{ diet_plan.snacks2|linebreaks }}</div>
+                </div>
+            </div>
+
+            <div class="meal-card">
+                <div class="time">19:00 - 20:00</div>
+                <div class="meal-content">
+                    <h3><i class="ph ph-moon"></i> Dinner</h3>
+                    <div class="meal-details">{{ diet_plan.dinner|linebreaks }}</div>
+                </div>
+            </div>
+
+            <div class="meal-card">
+                <div class="time">22:00 - 22:30</div>
+                <div class="meal-content">
+                    <h3><i class="ph ph-bed"></i> Before Bed</h3>
+                    <div class="meal-details">{{ diet_plan.snacks3|linebreaks }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notes Section -->
+    {% if diet_plan.notes %}
+    <div class="notes-section">
+        <div class="section-title">
+            <i class="ph ph-notepad"></i>
+            <h2>Important Notes</h2>
+        </div>
+        <div class="notes-content">
+            {{ diet_plan.notes|linebreaks }}
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+<style>
+/* Base Styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: #111827;
+}
+.diet-plan-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 90px;
+    background: #111827;
+    color: #e5e7eb;
+    font-family: 'Inter', sans-serif;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.section-title i {
+    font-size: 1.8rem;
+    color: #ffc451;
+}
+
+.section-title h2 {
+    font-size: 1.8rem;
+    color: #ffc451;
+    font-weight: 600;
+}
+
+/* Profile Section */
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.profile-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.profile-card .label {
+    color: #9ca3af;
+    font-size: 0.9rem;
+}
+
+.profile-card .value {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* Nutrition Section */
+.nutrition-cards {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.calorie-card {
+    background: rgba(255, 196, 81, 0.1);
+    border: 1px solid #ffc451;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.calorie-card .main-value {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffc451;
+    line-height: 1;
+}
+
+.macro-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.macro-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.macro-card i {
+    font-size: 2rem;
+    color: #ffc451;
+}
+
+/* Meal Timeline */
+.meal-timeline {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.meal-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+}
+
+.meal-card .time {
+    background: rgba(255, 196, 81, 0.1);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    color: #ffc451;
+}
+
+.meal-content {
+    padding: 1.5rem;
+}
+
+.meal-content h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #ffc451;
+    margin-bottom: 1rem;
+}
+
+.meal-details {
+    color: #e5e7eb;
+    line-height: 1.6;
+}
+
+/* Notes Section */
+.notes-section {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 2rem;
+}
+
+.notes-content {
+    line-height: 1.8;
+    color: #e5e7eb;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nutrition-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .macro-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .meal-card {
+        grid-template-columns: 1fr;
+    }
+    
+    .meal-card .time {
+        padding: 0.5rem;
+        text-align: center;
+    }
+}
+</style>
+{% endblock %}

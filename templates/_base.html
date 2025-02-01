@@ -55,7 +55,7 @@
 
             <nav id="navmenu" class="navmenu">
                 <ul>
-                    <li><a href="" class="{% block nav_home_active %}{% endblock %}">Home</a></li>
+                    <li><a href="{% url "pages:home" %}" class="{% block nav_home_active %}{% endblock %}">Home</a></li>
                     <li><a href="#about" class="{% block nav_about_active %}{% endblock %} scroll-to">About</a></li>
                     <li><a href="" class="{% block nav_services_active %}{% endblock %}">Services</a></li>
                     {% if user.is_authenticated %}

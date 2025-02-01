@@ -1,0 +1,71 @@
+{% extends "_base_clean.html" %}
+{% load static %}
+
+{% block title %}Choose Activity Level{% endblock %}
+
+
+{% block content %}
+<div class="activity-container">
+    <div class="activity-form-wrapper">
+        <h2>Choose Your Activity Level</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="activity-options">
+                <div class="activity-card" data-level="very active">
+                    <input type="radio" name="activity_level" id="very_active" value="very active">
+                    <label for="very_active">
+                        <i class="ph ph-lightning"></i>
+                        <span>Very Active</span>
+                        <small>Hard exercise/sports 6-7 days/week</small>
+                    </label>
+                </div>
+            
+                <div class="activity-card" data-level="active">
+                    <input type="radio" name="activity_level" id="active" value="active">
+                    <label for="active">
+                        <i class="ph ph-heartbeat"></i>
+                        <span>Active</span>
+                        <small>Hard exercise/sports 3-5 days/week</small>
+                    </label>
+                </div>
+            
+                <div class="activity-card" data-level="moderately active">
+                    <input type="radio" name="activity_level" id="moderately_active" value="moderately active">
+                    <label for="moderately_active">
+                        <i class="ph ph-bicycle"></i>
+                        <span>Moderately Active</span>
+                        <small>Moderate exercise/sports 3-5 days/week</small>
+                    </label>
+                </div>
+            
+                <div class="activity-card" data-level="lightly active">
+                    <input type="radio" name="activity_level" id="lightly_active" value="lightly active">
+                    <label for="lightly_active">
+                        <i class="ph ph-person-simple-walk"></i>
+                        <span>Lightly Active</span>
+                        <small>Light exercise 1-3 days/week</small>
+                    </label>
+                </div>
+            </div>
+            <button type="submit" class="submit-btn">Continue</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const cards = document.querySelectorAll('.activity-card');
+        
+        cards.forEach(card => {
+            card.addEventListener('click', function() {
+                // Remove active class from all cards
+                cards.forEach(c => c.classList.remove('active'));
+                // Add active class to clicked card
+                this.classList.add('active');
+                // Check the radio button
+                this.querySelector('input[type="radio"]').checked = true;
+            });
+        });
+    });
+</script>
+{% endblock %}

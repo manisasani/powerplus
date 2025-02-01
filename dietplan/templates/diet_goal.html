@@ -1,6 +1,82 @@
-<!-- templates/diet_goal.html -->
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Next</button>
-</form>
+{% extends "_base_clean.html" %}
+{% load static %}
+
+{% block title %}Choose Your Diet Goal{% endblock %}
+
+{% block content %}
+<div class="activity-container">
+    <div class="activity-form-wrapper">
+        <h2>Choose Your Diet Goal</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="activity-options">
+                <div class="activity-card" data-level="lose">
+                    <input type="radio" name="diet_goal" id="lose_weight" value="lose weight">
+                    <label for="lose_weight">
+                        <i class="ph ph-trend-down"></i>
+                        <span>Lose Weight</span>
+                        <small>Caloric deficit for weight loss</small>
+                    </label>
+                </div>
+            
+                <div class="activity-card" data-level="maintain">
+                    <input type="radio" name="diet_goal" id="maintain_weight" value="maintain weight">
+                    <label for="maintain_weight">
+                        <i class="ph ph-minus"></i>
+                        <span>Maintain Weight</span>
+                        <small>Balance calories for maintenance</small>
+                    </label>
+                </div>
+            
+                <div class="activity-card" data-level="gain">
+                    <input type="radio" name="diet_goal" id="gain_weight" value="gain weight">
+                    <label for="gain_weight">
+                        <i class="ph ph-trend-up"></i>
+                        <span>Gain Weight</span>
+                        <small>Caloric surplus for weight gain</small>
+                    </label>
+                </div>
+            
+                <div class="activity-card" data-level="build">
+                    <input type="radio" name="diet_goal" id="muscle_building" value="muscle_building">
+                    <label for="muscle_building">
+                        <i class="ph ph-barbell"></i>
+                        <span>Build Muscle</span>
+                        <small>High protein diet for muscle gain</small>
+                    </label>
+                </div>
+            </div>
+            <button type="submit" class="submit-btn">Continue</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const cards = document.querySelectorAll('.activity-card');
+        
+        cards.forEach(card => {
+            card.addEventListener('click', function() {
+                cards.forEach(c => c.classList.remove('active'));
+                this.classList.add('active');
+                this.querySelector('input[type="radio"]').checked = true;
+            });
+        });
+
+        gsap.from("h2", {
+            opacity: 0,
+            y: 30,
+            duration: 1,
+            ease: "power3.out"
+        });
+
+        gsap.from(".activity-card", {
+            opacity: 0,
+            y: 50,
+            duration: 0.8,
+            stagger: 0.15,
+            ease: "power3.out",
+            delay: 0.3
+        });
+</script>
+{% endblock %}
