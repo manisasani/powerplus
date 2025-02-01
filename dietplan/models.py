@@ -1,7 +1,9 @@
 from django.db import models
 from accounts.models import Profile
 from django.core.exceptions import ValidationError
-
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from accounts.models import CustomUser,DietPlanInfo,WorkoutPlanInfo
 class DietPlan(models.Model):
     DIET_GOAL = (
         ("lose weight", "Lose Weight"),
@@ -25,7 +27,7 @@ class DietPlan(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def validate_macros(self):
-        total = self.protein_percentage + self.carbs_percentage + +self.fat_percentage
+        total = self.protein_percentage + self.carbs_percentage + self.fat_percentage
         if total !=100:
             return False, f"The set of percentage macros must be equal to 100. The current value: {total}"   
 
