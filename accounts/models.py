@@ -1,8 +1,8 @@
 from django.db import models
-
-from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.core.validators import MinValueValidator, MaxValueValidator
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 
 class CustomUser(AbstractUser):
@@ -98,3 +98,33 @@ class Profile(models.Model):
 
     def __str__(self):
         return f"Profile of {self.user.username}"
+    
+@receiver(post_save, sender=CustomUser)
+def create_user_profile_and_info(sender, instance, created, **kwargs):
+    if created:
+        # ایجاد Profile
+        profile = Profile.objects.create(user=instance)
+        
+        # ایجاد DietPlanInfo
+        diet_info = DietPlanInfo.objects.create(
+            user=instance,
+            activity_level="lightly active",
+            diet_goal="maintain weight"
+        )
+        
+        # ایجاد WorkoutPlanInfo
+        workout_info = WorkoutPlanInfo.objects.create(
+            user=instance,
+            experience_level="beginner",
+            plan_goal="fitness"
+        )
+        
+        # ارتباط Profile با DietPlanInfo و WorkoutPlanInfo
+        profile.data_diet = diet_info
+        profile.data_plan = workout_info
+        profile.save()
+
+@receiver(post_save, sender=CustomUser)
+def save_user_profile(sender, instance, **kwargs):
+    if hasattr(instance, 'main_profile'):
+        instance.main_profile.save()
