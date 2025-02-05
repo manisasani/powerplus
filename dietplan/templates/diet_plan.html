@@ -155,6 +155,18 @@
     {% endif %}
 </div>
 
+{% if has_existing_plan %}
+<div class="update-section">
+    <form method="post" action="{% url 'dietplan:update_plan' %}">
+        {% csrf_token %}
+        <button type="submit" class="update-btn">
+            <i class="ph ph-arrows-clockwise"></i>
+            Update Diet Plan
+        </button>
+    </form>
+</div>
+{% endif %}
+
 <style>
 /* Base Styles */
 html, body {
@@ -333,5 +345,34 @@ html, body {
         text-align: center;
     }
 }
+
+.update-section {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.update-btn {
+    background: rgba(255, 196, 81, 0.1);
+    border: 1px solid #ffc451;
+    color: #ffc451;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.update-btn:hover {
+    background: #ffc451;
+    color: #111827;
+}
+
+.update-btn i {
+    font-size: 1.3rem;
+}
+
 </style>
 {% endblock %}

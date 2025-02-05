@@ -54,3 +54,17 @@ class DietPlan(models.Model):
 
     def __str__(self):
         return f"Diet plan for {self.goal} ({self.calorie_range_min}-{self.calorie_range_max} cal)"
+    
+
+
+class UserSelectedDietPlan(models.Model):
+    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, related_name='selected_diet')
+    selected_plan = models.ForeignKey(DietPlan, on_delete=models.CASCADE)
+    daily_calories = models.IntegerField()
+    assigned_at = models.DateTimeField(auto_now_add=True)
+    def __str__(self):
+        return f"{self.user.username}'s diet plan - {self.daily_calories} calories"
+
+    class Meta:
+        verbose_name = 'User Selected Diet Plan'
+        verbose_name_plural = 'User Selected Diet Plans'

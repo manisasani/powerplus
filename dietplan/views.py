@@ -1,16 +1,22 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import UpdateView
+from django.views.generic import View
 from django.urls import reverse_lazy
 from accounts.models import DietPlanInfo
 from django.views.generic import DetailView
 from .forms import DietGoalForm, ActivityLevelForm
-from .models import DietPlan
+from .models import DietPlan, UserSelectedDietPlan
 class ActivityLevelView(LoginRequiredMixin, UpdateView):
     model = DietPlanInfo
     form_class = ActivityLevelForm
     template_name = "activity_level.html"
     success_url = reverse_lazy('dietplan:goal')
+    def get(self, request, *args , **kwargs):
+        existing_plan = UserSelectedDietPlan.objects.filter(user=request.user).first()
+        if existing_plan:
+            return redirect('dietplan:plan')
+        return super().get(request, *args, **kwargs)
 
     def get_object(self, queryset=None):
         diet_info, created = DietPlanInfo.objects.get_or_create(
@@ -42,6 +48,28 @@ class DietPlanView(LoginRequiredMixin, DetailView):
 
     def get(self, request, *args, **kwargs):
         user = self.request.user
+
+        existing_plan = UserSelectedDietPlan.objects.filter(user=request.user).first()
+        if existing_plan:
+            daily_calories = existing_plan.daily_calories
+            diet_plan = existing_plan.selected_plan
+
+            protein_grams = (daily_calories * diet_plan.protein_percentage / 100) / 4
+            carbs_grams = (daily_calories * diet_plan.carbs_percentage / 100) / 4
+            fats_grams = (daily_calories * diet_plan.fat_percentage / 100) / 9
+
+            context = {
+                "user_info": user,
+                "daily_calories": daily_calories,
+                "diet_plan": diet_plan,
+                "macros": {
+                    "protein": int(protein_grams),
+                    "carbs": int(carbs_grams),
+                    "fats": int(fats_grams),
+                },
+                "has_existing_plan": True 
+            }
+            return render(request, self.template_name, context)
         
         # محاسبه BMR
         bmr = 10 * user.weight + 6.25 * user.height - 5 * user.age
@@ -85,11 +113,29 @@ class DietPlanView(LoginRequiredMixin, DetailView):
                 "error": "هیچ برنامه غذایی مناسب پیدا نشد.",
             }
             return render(request, self.template_name, context)
+        if diet_plan:
+            # محاسبه ماکروها
+            protein_grams = (daily_calories * diet_plan.protein_percentage / 100) / 4
+            carbs_grams = (daily_calories * diet_plan.carbs_percentage / 100) / 4
+            fats_grams = (daily_calories * diet_plan.fat_percentage / 100) / 9
 
-        # محاسبه ماکروها
-        protein_grams = (daily_calories * diet_plan.protein_percentage / 100) / 4
-        carbs_grams = (daily_calories * diet_plan.carbs_percentage / 100) / 4
-        fats_grams = (daily_calories * diet_plan.fat_percentage / 100) / 9
+            UserSelectedDietPlan.objects.create(
+                user=user,
+                selected_plan = diet_plan,
+                daily_calories = int(daily_calories)
+            )
+            context = {
+                'user_info': user,
+                'diet_plan': diet_plan,
+                'daily_calories': int(daily_calories),
+                'macros': {
+                'protein': int(protein_grams),
+                'carbs': int(carbs_grams),
+                'fats': int(fats_grams),
+                },
+                'has_existing_plan': True 
+            }
+            return render(request, self.template_name, context)
 
         # لاگ اطلاعات ماکروها
         print(f"\nMacronutrient Calculations:")
@@ -126,3 +172,9 @@ class DietPlanView(LoginRequiredMixin, DetailView):
             },
         }
         return render(request, self.template_name, context)
+    
+
+class UpdateDietPlanView(LoginRequiredMixin, View):
+    def post(self, request, *args, **kwargs):
+        UserSelectedDietPlan.objects.filter(user=request.user).delete()
+        return redirect('dietplan:activity')
