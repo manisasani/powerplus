@@ -157,13 +157,17 @@
 
 {% if has_existing_plan %}
 <div class="update-section">
-    <form method="post" action="{% url 'dietplan:update_plan' %}">
+    <form method="post" action="{% url 'dietplan:update_plan' %}" style="display: inline-block;">
         {% csrf_token %}
         <button type="submit" class="update-btn">
             <i class="ph ph-arrows-clockwise"></i>
             Update Diet Plan
         </button>
     </form>
+    <a href="{% url 'dietplan:download_pdf' %}" class="update-btn" style="text-decoration: none; margin-left: 1rem;">
+        <i class="ph ph-file-pdf"></i>
+        Download PDF
+    </a>
 </div>
 {% endif %}
 

@@ -7,6 +7,12 @@ from accounts.models import DietPlanInfo
 from django.views.generic import DetailView
 from .forms import DietGoalForm, ActivityLevelForm
 from .models import DietPlan, UserSelectedDietPlan
+from django.utils import timezone
+from django.http import HttpResponse
+from django.template.loader import get_template
+from io import BytesIO
+from xhtml2pdf import pisa
+
 class ActivityLevelView(LoginRequiredMixin, UpdateView):
     model = DietPlanInfo
     form_class = ActivityLevelForm
@@ -178,3 +184,37 @@ class UpdateDietPlanView(LoginRequiredMixin, View):
     def post(self, request, *args, **kwargs):
         UserSelectedDietPlan.objects.filter(user=request.user).delete()
         return redirect('dietplan:activity')
+    
+
+class DownloadDietPlanPDF(LoginRequiredMixin, View):
+    def get (self, request):
+        user_plan  = UserSelectedDietPlan.objects.filter(user=request.user).first()
+        if not user_plan:
+            return redirect('dietplan:plan')
+        
+        context={
+            'user_info': request.user,
+            'daily_calories': user_plan.daily_calories,
+            'diet_plan': user_plan.selected_plan,
+            'macros':{
+                'protein': int((user_plan.daily_calories * user_plan.selected_plan.protein_percentage / 100) / 4),
+                'carbs': int((user_plan.daily_calories * user_plan.selected_plan.carbs_percentage / 100) / 4),
+                'fats': int((user_plan.daily_calories * user_plan.selected_plan.fat_percentage / 100) / 9),
+            },
+            'current_date': timezone.now().strftime('%Y-%m-%d')
+
+
+        }
+        template = get_template('pdf_template.html')
+        html = template.render(context)
+
+        result = BytesIO()
+        pdf = pisa.pisaDocument(BytesIO(html.encode('UTF-8')), result)
+
+        if not pdf.err:
+            filename = f"diet_plan-{request.user.email}-{timezone.now().strftime('%Y%m%d')}.pdf"
+            response = HttpResponse(result.getvalue(), content_type='application/pdf')
+            response['Content-Disposition'] = f'attachment; filename="{filename}"'
+            return response
+
+        return HttpResponse('Error generating PDF', status=500)

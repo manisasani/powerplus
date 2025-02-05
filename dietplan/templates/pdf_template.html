@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page {
+            margin: 2cm;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #111827;
+            color: #ffc451;
+        }
+        h1, h2 {
+            color: #111827;
+            margin-bottom: 10px;
+        }
+        .center {
+            text-align: center;
+        }
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+        }
+        .meal-info {
+            color: #666;
+            font-size: 12px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+            margin-bottom: 5px;
+        }
+        .meal-content {
+            font-size: 13px;
+        }
+        .meal-container {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .meal-column {
+            flex: 1;
+        }
+        .header-banner {
+            text-align: center;
+            font-size: 36px;
+            font-weight: bold;
+            color:  #ff4500;
+             
+            padding: 20px 0;
+            margin-bottom: 20px;
+        }
+        .footer a {
+            color: #ff4500;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-banner">
+        " POWERPLUSE "
+    </div>
+    <div class="center">
+        <h1>Diet Plan</h1>
+        <p>Generated on {{ current_date }}</p>
+    </div>
+
+    <table>
+        <tr>
+            <th>Personal Info</th>
+            <th>Daily Targets</th>
+        </tr>
+        <tr>
+            <td>
+                Name: {{ user_info.username }}<br>
+                Age: {{ user_info.age }} years<br>
+                Gender: {{ user_info.get_gender_display }}<br>
+                Height: {{ user_info.height }} cm<br>
+                Weight: {{ user_info.weight }} kg<br>
+                Goal: {{ user_info.diet_info.get_diet_goal_display }}
+            </td>
+            <td>
+                Daily Calories: {{ daily_calories }} kcal<br>
+                Protein: {{ macros.protein }}g ({{ diet_plan.protein_percentage }}%)<br>
+                Carbs: {{ macros.carbs }}g ({{ diet_plan.carbs_percentage }}%)<br>
+                Fats: {{ macros.fats }}g ({{ diet_plan.fat_percentage }}%)
+            </td>
+        </tr>
+    </table>
+
+    <h2>Daily Meal Plan</h2>
+    <div class="meal-container">
+        <div class="meal-column">
+            <table>
+                <tr><th>Morning Meals</th></tr>
+                <tr>
+                    <td>
+                        <div class="meal-info">6:00 - 8:00 | Breakfast</div>
+                        <div class="meal-content">{{ diet_plan.breakfast|linebreaks }}</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="meal-info">10:00 - 11:00 | Morning Snack</div>
+                        <div class="meal-content">{{ diet_plan.snacks|linebreaks }}</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="meal-info">13:00 - 14:00 | Lunch</div>
+                        <div class="meal-content">{{ diet_plan.lunch|linebreaks }}</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="meal-column">
+            <table>
+                <tr><th>Evening Meals</th></tr>
+                <tr>
+                    <td>
+                        <div class="meal-info">16:00 - 17:00 | Afternoon Snack</div>
+                        <div class="meal-content">{{ diet_plan.snacks2|linebreaks }}</div>
+                    </td>
+                </tr>
+                
+                    <td>
+                        <div class="meal-info">19:00 - 20:00 | Dinner</div>
+                        <div class="meal-content">{{ diet_plan.dinner|linebreaks }}</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="meal-info">22:00 - 22:30 | Before Bed</div>
+                        <div class="meal-content">{{ diet_plan.snacks3|linebreaks }}</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    {% if diet_plan.notes %}
+    <h2>Important Notes</h2>
+    <table>
+        <tr>
+            <td>{{ diet_plan.notes|linebreaks }}</td>
+        </tr>
+    </table>
+    {% endif %}
+
+    <div class="footer">
+        <a href="https://powerpluse.com">Generated by PowerPluse</a><br>
+        Your path to a healthier lifestyle
+    </div>
+</body>
+</html>
