@@ -31,8 +31,8 @@ class WorkoutPlan(models.Model):
     day2_title = models.CharField(max_length=60)
     day2_exercises = models.TextField()
 
-    day3_title = models.CharField(max_length=60)
-    day3_exercises = models.TextField()
+    day3_title = models.CharField(max_length=60, null=True, blank=True)
+    day3_exercises = models.TextField(null=True, blank=True)
 
     day4_title = models.CharField(max_length=60, null=True, blank=True)
     day4_exercises = models.TextField(null=True, blank=True)

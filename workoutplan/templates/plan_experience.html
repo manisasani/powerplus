@@ -1,0 +1,74 @@
+{% extends "_base_clean.html" %}
+{% load static %}
+
+{% block title %}Choose Your Experience Level{% endblock %}
+
+{% block content %}
+<div class="activity-container">
+    <div class="activity-form-wrapper">
+        <h2>Choose Your Experience Level</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="activity-options">
+                <div class="activity-card" data-level="beginner">
+                    <input type="radio" name="experience_level" id="beginner" value="beginner">
+                    <label for="beginner">
+                        <i class="ph ph-user"></i>
+                        <span>Beginner</span>
+                        <small>New to working out (0-1 year)</small>
+                    </label>
+                </div>
+            
+                <div class="activity-card" data-level="intermediate">
+                    <input type="radio" name="experience_level" id="intermediate" value="intermediate">
+                    <label for="intermediate">
+                        <i class="ph ph-user-focus"></i>
+                        <span>Intermediate</span>
+                        <small>Regular training (1-3 years)</small>
+                    </label>
+                </div>
+            
+                <div class="activity-card" data-level="expert">
+                    <input type="radio" name="experience_level" id="expert" value="expert">
+                    <label for="expert">
+                        <i class="ph ph-user-list"></i>
+                        <span>Expert</span>
+                        <small>Advanced training (3+ years)</small>
+                    </label>
+                </div>
+            </div>
+            <button type="submit" class="submit-btn">Continue</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const cards = document.querySelectorAll('.activity-card');
+        
+        cards.forEach(card => {
+            card.addEventListener('click', function() {
+                cards.forEach(c => c.classList.remove('active'));
+                this.classList.add('active');
+                this.querySelector('input[type="radio"]').checked = true;
+            });
+        });
+
+        gsap.from("h2", {
+            opacity: 0,
+            y: 30,
+            duration: 1,
+            ease: "power3.out"
+        });
+
+        gsap.from(".activity-card", {
+            opacity: 0,
+            y: 50,
+            duration: 0.8,
+            stagger: 0.15,
+            ease: "power3.out",
+            delay: 0.3
+        });
+    });
+</script>
+{% endblock %}

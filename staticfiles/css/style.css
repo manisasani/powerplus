@@ -433,9 +433,9 @@ input[type="number"]::-webkit-inner-spin-button {
   width: 500px !important;
 }
 
-.select-box {
+/* .select-box {
   /* تمام تنظیمات مربوط به select-box */
-}
+ */
 
 /* تمام استایل‌های مربوط به فرم ثبت‌نام */
 .signup .content .form .inputBox,
