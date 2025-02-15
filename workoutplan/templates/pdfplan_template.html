@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Diet Plan - {{ user_info.username }}</title>
+    <title>Workout Plan - {{ user_info.username }}</title>
     <style>
         @page {
             size: a4 portrait;
@@ -60,11 +60,11 @@
             font-weight: bold;
             width: 40%;
         }
-        .meal-block {
+        .workout-day {
             margin-bottom: 25px;
             page-break-inside: avoid;
         }
-        .meal-title {
+        .day-title {
             background: #111827;
             color: #ffc451;
             padding: 10px 15px;
@@ -72,7 +72,7 @@
             font-size: 16px;
             margin-bottom: 10px;
         }
-        .meal-content {
+        .exercises {
             padding: 0 15px;
         }
         .notes {
@@ -90,32 +90,11 @@
             border-top: 1px solid #ddd;
             padding-top: 15px;
         }
-        .macro-details {
-            background: #f9f9f9;
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
-        .macro-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 5px 0;
-            border-bottom: 1px solid #eee;
-        }
-        .macro-label {
-            font-weight: bold;
-            color: #111827;
-        }
-        .time-info {
-            color: #666;
-            font-size: 0.9em;
-            margin-bottom: 5px;
-        }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>Personal Diet Plan</h1>
+        <h1>Personal Workout Plan</h1>
         <p>Generated for: {{ user_info.username }}</p>
         <p>Date: {{ current_date }}</p>
     </div>
@@ -143,74 +122,82 @@
                 <div class="info-cell info-label">Weight</div>
                 <div class="info-cell">{{ user_info.weight }} kg</div>
             </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Training Program Details</div>
+        <div class="info-grid">
             <div class="info-row">
-                <div class="info-cell info-label">Diet Goal</div>
-                <div class="info-cell">{{ user_info.diet_info.get_diet_goal_display }}</div>
+                <div class="info-cell info-label">Goal</div>
+                <div class="info-cell">{{ plan.get_goal_display }}</div>
+            </div>
+            <div class="info-row">
+                <div class="info-cell info-label">Experience Level</div>
+                <div class="info-cell">{{ plan.get_experience_level_display }}</div>
+            </div>
+            <div class="info-row">
+                <div class="info-cell info-label">Sessions Per Week</div>
+                <div class="info-cell">{{ plan.sessions_per_week }}</div>
+            </div>
+            <div class="info-row">
+                <div class="info-cell info-label">Rest Between Sets</div>
+                <div class="info-cell">{{ plan.rest_between_sets }} seconds</div>
             </div>
         </div>
     </div>
 
     <div class="section">
-        <div class="section-title">Daily Nutritional Targets</div>
-        <div class="macro-details">
-            <div class="macro-row">
-                <span class="macro-label">Daily Calories:</span>
-                <span>{{ daily_calories }} kcal</span>
-            </div>
-            <div class="macro-row">
-                <span class="macro-label">Protein:</span>
-                <span>{{ macros.protein }}g ({{ diet_plan.protein_percentage }}%)</span>
-            </div>
-            <div class="macro-row">
-                <span class="macro-label">Carbohydrates:</span>
-                <span>{{ macros.carbs }}g ({{ diet_plan.carbs_percentage }}%)</span>
-            </div>
-            <div class="macro-row">
-                <span class="macro-label">Fats:</span>
-                <span>{{ macros.fats }}g ({{ diet_plan.fat_percentage }}%)</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="section">
-        <div class="section-title">Daily Meal Schedule</div>
+        <div class="section-title">Weekly Training Schedule</div>
         
-        <div class="meal-block">
-            <div class="meal-title">Breakfast (6:00 - 8:00)</div>
-            <div class="meal-content">{{ diet_plan.breakfast|linebreaks }}</div>
+        {% if plan.day1_title and plan.day1_exercises %}
+        <div class="workout-day">
+            <div class="day-title">Day 1: {{ plan.day1_title }}</div>
+            <div class="exercises">{{ plan.day1_exercises|linebreaks }}</div>
         </div>
+        {% endif %}
 
-        <div class="meal-block">
-            <div class="meal-title">Morning Snack (10:00 - 11:00)</div>
-            <div class="meal-content">{{ diet_plan.snacks|linebreaks }}</div>
+        {% if plan.day2_title and plan.day2_exercises %}
+        <div class="workout-day">
+            <div class="day-title">Day 2: {{ plan.day2_title }}</div>
+            <div class="exercises">{{ plan.day2_exercises|linebreaks }}</div>
         </div>
+        {% endif %}
 
-        <div class="meal-block">
-            <div class="meal-title">Lunch (13:00 - 14:00)</div>
-            <div class="meal-content">{{ diet_plan.lunch|linebreaks }}</div>
+        {% if plan.day3_title and plan.day3_exercises %}
+        <div class="workout-day">
+            <div class="day-title">Day 3: {{ plan.day3_title }}</div>
+            <div class="exercises">{{ plan.day3_exercises|linebreaks }}</div>
         </div>
+        {% endif %}
 
-        <div class="meal-block">
-            <div class="meal-title">Afternoon Snack (16:00 - 17:00)</div>
-            <div class="meal-content">{{ diet_plan.snacks2|linebreaks }}</div>
+        {% if plan.day4_title and plan.day4_exercises %}
+        <div class="workout-day">
+            <div class="day-title">Day 4: {{ plan.day4_title }}</div>
+            <div class="exercises">{{ plan.day4_exercises|linebreaks }}</div>
         </div>
+        {% endif %}
 
-        <div class="meal-block">
-            <div class="meal-title">Dinner (19:00 - 20:00)</div>
-            <div class="meal-content">{{ diet_plan.dinner|linebreaks }}</div>
+        {% if plan.day5_title and plan.day5_exercises %}
+        <div class="workout-day">
+            <div class="day-title">Day 5: {{ plan.day5_title }}</div>
+            <div class="exercises">{{ plan.day5_exercises|linebreaks }}</div>
         </div>
+        {% endif %}
 
-        <div class="meal-block">
-            <div class="meal-title">Before Bed (22:00 - 22:30)</div>
-            <div class="meal-content">{{ diet_plan.snacks3|linebreaks }}</div>
+        {% if plan.day6_title and plan.day6_exercises %}
+        <div class="workout-day">
+            <div class="day-title">Day 6: {{ plan.day6_title }}</div>
+            <div class="exercises">{{ plan.day6_exercises|linebreaks }}</div>
         </div>
+        {% endif %}
     </div>
 
-    {% if diet_plan.notes %}
+    {% if plan.notes %}
     <div class="section">
         <div class="section-title">Important Notes</div>
         <div class="notes">
-            {{ diet_plan.notes|linebreaks }}
+            {{ plan.notes|linebreaks }}
         </div>
     </div>
     {% endif %}

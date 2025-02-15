@@ -4,6 +4,26 @@
 
 {% block content %}
 <div class="diet-plan-container">
+    <!-- Plan Selection Section -->
+    <div class="plan-selection">
+        <div class="section-title">
+            <i class="ph ph-list"></i>
+            <h2>Available Training Plans</h2>
+        </div>
+        <form method="post" action="{% url 'workoutplan:change_sessions' %}" class="sessions-form">
+            {% csrf_token %}
+            <div class="select-wrapper">
+                <select name="sessions" class="sessions-select" onchange="this.form.submit()">
+                    {% for available_plan in available_plans %}
+                        <option value="{{ available_plan.sessions_per_week }}" 
+                                {% if available_plan.sessions_per_week == current_sessions %}selected{% endif %}>
+                            {{ available_plan.sessions_per_week }} Days Training Plan
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+        </form>
+    </div>
     <!-- User Profile Section -->
     <div class="profile-section">
         <div class="section-title">
@@ -302,6 +322,55 @@ html, body {
 
 .update-btn i {
     font-size: 1.3rem;
+}
+/* Plan Selection Styles */
+.plan-selection {
+    margin-bottom: 3rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 2rem;
+}
+
+.select-wrapper {
+    position: relative;
+    max-width: 400px;
+}
+
+.sessions-select {
+    width: 100%;
+    padding: 1rem 2rem;
+    background: rgba(255, 196, 81, 0.1);
+    border: 1px solid #ffc451;
+    border-radius: 8px;
+    color: #ffc451;
+    font-size: 1rem;
+    appearance: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sessions-select:hover {
+    background: rgba(255, 196, 81, 0.2);
+}
+
+.select-wrapper::after {
+    content: '';
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #ffc451;
+    pointer-events: none;
+}
+
+.sessions-select option {
+    background: #111827;
+    color: #e5e7eb;
+    padding: 1rem;
 }
 </style>
 {% endblock %}

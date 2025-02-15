@@ -71,46 +71,62 @@ class WorkoutPlanView(LoginRequiredMixin, DetailView):
     def get(self, request, *args, **kwargs):
         user = self.request.user
 
-    
+        available_plans = WorkoutPlan.objects.filter(
+            goal = user.workout_info.plan_goal,
+            experience_level = user.workout_info.experience_level
+        ).order_by('sessions_per_week')
+
         existing_plan = UserSelectedWorkoutPlan.objects.filter(user=user).first()
-        if existing_plan:
-            workout_plan = existing_plan.selected_plan
-            context = {
-                "user_info": user,
-                "plan": workout_plan
-            }
-            return render(request, self.template_name, context)
-        
-        workout_plan = WorkoutPlan.objects.filter(
-            goal=user.workout_info.plan_goal,
-            experience_level=user.workout_info.experience_level
-        ).first()
 
-        if not workout_plan:
-            context = {
-                'user_info': user,
-                'plan': None,
-                'error': 'No suitable workout plan found for your goals and experience level.'
-            }
-            return render(request, self.template_name, context)
-        
-
-        UserSelectedWorkoutPlan.objects.create(
-            user=user,
-            selected_plan=workout_plan
-        )
-
+        if not existing_plan:
+            if not available_plans.exists():
+                context = {
+                    'user':user,
+                    'plan':None,
+                    'error': 'NO suitable workout plan found for your goals and experience level.'
+                }
+                return render(request, self.template_name, context)
+            
+            workout_plan =available_plans.first()
+            existing_plan = UserSelectedWorkoutPlan.objects.create(
+                user=user,
+                selected_plan=workout_plan,
+            )
         context = {
-            'user_info': user,
-            'plan': workout_plan
+            'user':user,
+            'plan':existing_plan.selected_plan,
+            'available_plans': available_plans,
+            'current_sessions': existing_plan.selected_plan.sessions_per_week
         }
         return render(request, self.template_name, context)
+    
+class ChangePlanSessionView(LoginRequiredMixin, View):
+    def post(self, request):
+        sessions = request.POST.get('sessions')
 
+        if not sessions:
+            return redirect('workoutplan:workoutplan')
 
+        user = request.user
+
+        new_plan = WorkoutPlan.objects.filter(
+            goal=user.workout_info.plan_goal,
+            experience_level=user.workout_info.experience_level,
+            sessions_per_week=sessions
+        ).first()
+
+        if new_plan:
+            UserSelectedWorkoutPlan.objects.update_or_create(
+                user=user,
+                defaults={'selected_plan': new_plan}
+            )
+
+        return redirect('workoutplan:workoutplan')
+    
 class UpdateWorkoutPlanView(LoginRequiredMixin, View):
     def post(self, request, *args, **kwargs):
-        UserSelectedWorkoutPlan.objects.filter(user=request.user).delete()
-        return redirect('workoutplan:workoutplan')
+        UserSelectedWorkoutPlan.objects.filter(user=self.request.user).delete()
+        return redirect('workoutplan:goal')
     
 class DownloadWorkoutPlanPDF(LoginRequiredMixin, View):
     def get(self, request):
