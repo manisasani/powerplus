@@ -24,7 +24,9 @@ urlpatterns = [
     path("accounts/", include("allauth.urls")),
     path("", include('pages.urls')),
     path("dietplan/",include('dietplan.urls')),
-    path("workoutplan/", include('workoutplan.urls'))
+    path("workoutplan/", include('workoutplan.urls')),
+    path('api/exercises/', include('exercises.urls')),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
