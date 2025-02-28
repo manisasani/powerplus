@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
-from django.db import models  # اضافه شد
+from django.db import models 
 from .models import Muscle, Exercise
 from .serializers import MuscleSerializer, ExerciseSerializer
 from django.views.generic import ListView, DetailView
@@ -10,7 +10,7 @@ class MuscleViewSet(viewsets.ModelViewSet):
     queryset = Muscle.objects.all()
     serializer_class = MuscleSerializer
 
-    @action(detail=True, methods=['get'])  # اصلاح شد
+    @action(detail=True, methods=['get'])  
     def exercises(self, request, pk=None):
         muscle = self.get_object()
         exercises = Exercise.objects.filter(muscle=muscle)
@@ -23,7 +23,7 @@ class ExerciseViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         queryset = Exercise.objects.all()
-        search = self.request.query_params.get('search', None)  # اصلاح شد
+        search = self.request.query_params.get('search', None)  
 
         if search:
             queryset = queryset.filter(
@@ -43,8 +43,7 @@ class MuscleDetailView(DetailView):
     context_object_name = 'muscle'
 
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(self, **kwargs)
-        context = super().get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs) 
         context['exercises'] = Exercise.objects.filter(muscle=self.object)
         return context
         

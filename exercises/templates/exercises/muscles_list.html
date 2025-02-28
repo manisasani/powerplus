@@ -4,22 +4,25 @@
 {% block title %}Muscles List - Power{% endblock %}
 
 {% block content %}
-<section class="muscles-section" style="margin-top: 100px;">
-    <div class="container">
-        <div class="section-header">
-            <h2>Muscle Groups</h2>
-            <p>Select a muscle group to view related exercises</p>
+<section class="muscles-section dark-background">
+    <div class="container py-5">
+        <div class="section-header text-center mb-5">
+            <h2 class="text-white display-4 fw-bold">Muscle Groups</h2>
+            <p class="text-light opacity-75 lead">Select a muscle group to view related exercises</p>
         </div>
 
-        <div class="row gy-4">
+        <div class="row g-4 justify-content-center">
             {% for muscle in muscles %}
-            <div class="col-lg-4 col-md-6" data-aos="fade-up">
-                <div class="card muscle-card">
-                    <img src="{{ muscle.image.url }}" class="card-img-top" alt="{{ muscle.name }}">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ muscle.name }}</h5>
-                        <p class="card-text">{{ muscle.description|truncatewords:20 }}</p>
-                        <a href="{% url 'exercises:muscle_detail' muscle.id %}" class="btn btn-primary">View Exercises</a>
+            <div class="col-lg-3 col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="muscle-card">
+                    <div class="card-image">
+                        <img src="{{ muscle.image.url }}" alt="{{ muscle.name }}">
+                        <div class="overlay">
+                            <div class="content">
+                                <h3>{{ muscle.name }}</h3>
+                                <a href="{% url 'exercises:muscle_detail' muscle.id %}" class="view-btn">View Exercises</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -31,35 +34,123 @@
 
 {% block extra_css %}
 <style>
+    body {
+        background-color: #1a1a1a;
+    }
+
+    .muscles-section {
+        padding-top: 80px;
+        min-height: 100vh;
+        background-color: #1a1a1a;
+    }
+
+    .section-header {
+        margin-bottom: 3rem !important;
+    }
+
+    .section-header h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .section-header p {
+        font-size: 1.1rem;
+        color: #aaa;
+    }
+
     .muscle-card {
-        transition: transform 0.3s ease;
-        margin-bottom: 20px;
-        border: none;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        transition: all 0.3s ease;
+        aspect-ratio: 1;
     }
 
     .muscle-card:hover {
         transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.3);
     }
 
-    .muscle-card img {
-        height: 250px;
+    .card-image {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .card-image img {
+        width: 100%;
+        height: 100%;
         object-fit: cover;
+        transition: transform 0.3s ease;
     }
 
-    .section-header {
+    .muscle-card:hover .card-image img {
+        transform: scale(1.1);
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.9));
+        display: flex;
+        align-items: flex-end;
+        padding: 1.5rem;
+        transition: all 0.3s ease;
+    }
+
+    .muscle-card:hover .overlay {
+        background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.95));
+    }
+
+    .overlay .content {
+        width: 100%;
         text-align: center;
-        margin-bottom: 40px;
     }
 
-    .section-header h2 {
-        font-size: 32px;
-        font-weight: bold;
-        color: #2c3e50;
+    .overlay h3 {
+        color: white;
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
     }
 
-    .section-header p {
-        color: #666;
+    .view-btn {
+        display: inline-block;
+        padding: 0.5rem 1.5rem;
+        background-color: #0056b3;
+        color: white;
+        text-decoration: none;
+        border-radius: 25px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    .muscle-card:hover .view-btn {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .view-btn:hover {
+        background-color: #003d82;
+        color: white;
+        transform: translateY(-2px);
+    }
+
+    /* Remove white space below navbar */
+    .navbar {
+        margin-bottom: 0 !important;
+    }
+
+    /* Ensure no white background anywhere */
+    html, body {
+        background-color: #1a1a1a !important;
     }
 </style>
 {% endblock %}
