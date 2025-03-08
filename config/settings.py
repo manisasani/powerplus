@@ -11,7 +11,26 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv
 import os
+
+load_dotenv()
+
+#USD API Settings
+USD_API_KEY = os.getenv('USD_API_KEY')
+USD_API_BASE_URL = 'https://api.nal.usda.gov/fdc/v1/'
+
+#Cache settings
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+        'LOCATION': 'calorie_cache_table',
+    }
+}
+# Cache timeout settings
+FOOD_SEARCH_CACHE_TIMEOUT = 3600  # 1 hour
+FOOD_DETAILS_CACHE_TIMEOUT = 86400  # 24 hours
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
