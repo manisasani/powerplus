@@ -1,0 +1,24 @@
+/* static/calorie/css/styles.css */
+.nutrition-info ul {
+    margin-bottom: 0;
+}
+
+.card-footer {
+    background-color: transparent;
+    border-top: none;
+}
+
+.nutrition-details table th {
+    width: 40%;
+}
+
+.daily-total {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .table-responsive {
+        font-size: 0.9rem;
+    }
+}

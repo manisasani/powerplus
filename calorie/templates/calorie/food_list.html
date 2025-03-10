@@ -1,0 +1,60 @@
+{% extends 'calorie/base_calorie.html' %}
+
+{% block breadcrumb %}
+<li class="breadcrumb-item active">Food List</li>
+{% endblock %}
+
+{% block calorie_content %}
+<div class="card mb-4">
+    <div class="card-header">
+        <h4 class="card-title mb-0">Search Foods</h4>
+    </div>
+    <div class="card-body">
+        <form method="get" class="row g-3">
+            <div class="col-md-6">
+                {{ form.query }}
+            </div>
+            <div class="col-md-4">
+                {{ form.category }}
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-primary w-100">Search</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    {% for food in foods %}
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">{{ food.name }}</h5>
+                    {% if food.category %}
+                        <h6 class="card-subtitle mb-2 text-muted">{{ food.category.name }}</h6>
+                    {% endif %}
+                    <div class="nutrition-info">
+                        <p class="mb-1"><strong>Per 100g:</strong></p>
+                        <ul class="list-unstyled">
+                            <li>Calories: {{ food.calories }}kcal</li>
+                            <li>Protein: {{ food.protein }}g</li>
+                            <li>Carbs: {{ food.carbs }}g</li>
+                            <li>Fat: {{ food.fat }}g</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="{% url 'calorie:food_detail' food.pk %}" 
+                       class="btn btn-primary btn-sm">Add to Log</a>
+                </div>
+            </div>
+        </div>
+    {% empty %}
+        <div class="col-12">
+            <div class="alert alert-info">
+                No foods found matching your criteria.
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

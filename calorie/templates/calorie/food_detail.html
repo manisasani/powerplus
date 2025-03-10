@@ -1,0 +1,86 @@
+{% extends 'calorie/base_calorie.html' %}
+
+{% block breadcrumb %}
+<li class="breadcrumb-item active">{{ food.name }}</li>
+{% endblock %}
+
+{% block calorie_content %}
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title mb-0">{{ food.name }}</h4>
+            </div>
+            <div class="card-body">
+                <h6 class="card-subtitle mb-3 text-muted">
+                    {% if food.category %}{{ food.category.name }}{% endif %}
+                </h6>
+                
+                <div class="nutrition-details">
+                    <h5>Nutritional Information (per 100g)</h5>
+                    <table class="table">
+                        <tr>
+                            <th>Calories:</th>
+                            <td>{{ food.calories }}kcal</td>
+                        </tr>
+                        <tr>
+                            <th>Protein:</th>
+                            <td>{{ food.protein }}g</td>
+                        </tr>
+                        <tr>
+                            <th>Carbohydrates:</th>
+                            <td>{{ food.carbs }}g</td>
+                        </tr>
+                        <tr>
+                            <th>Fat:</th>
+                            <td>{{ food.fat }}g</td>
+                        </tr>
+                        {% if food.fiber %}
+                        <tr>
+                            <th>Fiber:</th>
+                            <td>{{ food.fiber }}g</td>
+                        </tr>
+                        {% endif %}
+                        {% if food.sugar %}
+                        <tr>
+                            <th>Sugar:</th>
+                            <td>{{ food.sugar }}g</td>
+                        </tr>
+                        {% endif %}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title mb-0">Log Food</h4>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <div class="mb-3">
+                            <label for="{{ field.id_for_label }}" class="form-label">
+                                {{ field.label }}
+                            </label>
+                            {{ field }}
+                            {% if field.help_text %}
+                                <div class="form-text">{{ field.help_text }}</div>
+                            {% endif %}
+                            {% if field.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {{ field.errors }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-primary">Log Food</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
