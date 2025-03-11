@@ -1,0 +1,186 @@
+[
+    {
+        "model": "calorie.foodcategory",
+        "pk": 1,
+        "fields": {
+            "name": "Dairy",
+            "description": "Milk, yogurt, cheese and other dairy products"
+        }
+    },
+    {
+        "model": "calorie.foodcategory",
+        "pk": 2,
+        "fields": {
+            "name": "Meat & Protein",
+            "description": "Meat, chicken, fish and legumes"
+        }
+    },
+    {
+        "model": "calorie.foodcategory",
+        "pk": 3,
+        "fields": {
+            "name": "Fruits",
+            "description": "Fresh fruits and dried fruits"
+        }
+    },
+    {
+        "model": "calorie.foodcategory",
+        "pk": 4,
+        "fields": {
+            "name": "Vegetables",
+            "description": "Fresh and cooked vegetables"
+        }
+    },
+    {
+        "model": "calorie.foodcategory",
+        "pk": 5,
+        "fields": {
+            "name": "Grains",
+            "description": "Bread, rice, pasta and cereals"
+        }
+    },
+    {
+        "model": "calorie.foodcategory",
+        "pk": 6,
+        "fields": {
+            "name": "Snacks & Sweets",
+            "description": "Cookies, chips, candies and desserts"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 1,
+        "fields": {
+            "name": "Low-fat Milk",
+            "category": 1,
+            "calories": 42,
+            "protein": 3.4,
+            "carbs": 5.0,
+            "fat": 1.0,
+            "serving_size": 100,
+            "common_serving": "1 cup",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 2,
+        "fields": {
+            "name": "Greek Yogurt",
+            "category": 1,
+            "calories": 59,
+            "protein": 10.0,
+            "carbs": 3.6,
+            "fat": 0.4,
+            "serving_size": 100,
+            "common_serving": "1 cup",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 3,
+        "fields": {
+            "name": "Cheddar Cheese",
+            "category": 1,
+            "calories": 402,
+            "protein": 25.0,
+            "carbs": 1.3,
+            "fat": 33.1,
+            "serving_size": 100,
+            "common_serving": "1 slice (28g)",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 4,
+        "fields": {
+            "name": "Chicken Breast",
+            "category": 2,
+            "calories": 165,
+            "protein": 31.0,
+            "carbs": 0.0,
+            "fat": 3.6,
+            "serving_size": 100,
+            "common_serving": "1 medium breast",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 5,
+        "fields": {
+            "name": "Salmon",
+            "category": 2,
+            "calories": 208,
+            "protein": 22.0,
+            "carbs": 0.0,
+            "fat": 13.0,
+            "serving_size": 100,
+            "common_serving": "1 fillet",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 6,
+        "fields": {
+            "name": "Egg",
+            "category": 2,
+            "calories": 155,
+            "protein": 13.0,
+            "carbs": 1.1,
+            "fat": 11.0,
+            "serving_size": 100,
+            "common_serving": "1 large egg",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 7,
+        "fields": {
+            "name": "Banana",
+            "category": 3,
+            "calories": 89,
+            "protein": 1.1,
+            "carbs": 22.8,
+            "fat": 0.3,
+            "serving_size": 100,
+            "common_serving": "1 medium",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 8,
+        "fields": {
+            "name": "Apple",
+            "category": 3,
+            "calories": 52,
+            "protein": 0.3,
+            "carbs": 13.8,
+            "fat": 0.2,
+            "serving_size": 100,
+            "common_serving": "1 medium",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    }
+]
