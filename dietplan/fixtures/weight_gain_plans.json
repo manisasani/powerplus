@@ -1,0 +1,102 @@
+[
+    {
+        "model": "dietplan.dietplan",
+        "pk": 6,
+        "fields": {
+            "goal": "gain weight",
+            "calorie_range_min": 2000,
+            "calorie_range_max": 2300,
+            "breakfast": "3 whole eggs + 3 egg whites scrambled with spinach & mushrooms\n1 slice whole-grain toast with 1 tbsp peanut butter\n1 small banana",
+            "snacks": "1 cup cottage cheese (low-fat)\n10 almonds\n1 tsp honey",
+            "lunch": "150g grilled chicken breast\n1 cup quinoa\nSteamed broccoli & carrots\n1 tbsp olive oil",
+            "snacks2": "1 protein shake with 1 scoop whey protein, 1 cup almond milk, and 1 tbsp peanut butter",
+            "dinner": "200g grilled salmon\n1 medium sweet potato\n1 cup mixed greens with olive oil & vinegar dressing",
+            "snacks3": "1 small bowl of Greek yogurt with 1 tbsp chia seeds",
+            "protein_percentage": 30,
+            "carbs_percentage": 50,
+            "fat_percentage": 20,
+            "notes": "This plan is designed for those who are moderately active and want to gain weight while promoting muscle growth. The calorie surplus is controlled to avoid excessive fat gain.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "dietplan.dietplan",
+        "pk": 7,
+        "fields": {
+            "goal": "gain weight",
+            "calorie_range_min": 2300,
+            "calorie_range_max": 2600,
+            "breakfast": "4 scrambled eggs\n1 avocado\n1 slice whole-grain toast with almond butter",
+            "snacks": "1 small apple\n1 handful of mixed nuts (20g)",
+            "lunch": "150g lean beef steak\n1 cup brown rice\n1 cup steamed asparagus\n1 tbsp olive oil",
+            "snacks2": "1 protein shake (whey protein, 1 cup oat milk, 1 tbsp peanut butter)",
+            "dinner": "200g grilled chicken breast\n1 medium baked potato\n1 cup roasted Brussels sprouts & carrots",
+            "snacks3": "1 cup Greek yogurt with 1 tbsp honey and 10 walnuts",
+            "protein_percentage": 30,
+            "carbs_percentage": 50,
+            "fat_percentage": 20,
+            "notes": "This plan is ideal for individuals looking for a faster rate of weight gain while keeping it lean. The goal is muscle gain, so the focus is on protein and healthy carbs.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "dietplan.dietplan",
+        "pk": 8,
+        "fields": {
+            "goal": "gain weight",
+            "calorie_range_min": 2600,
+            "calorie_range_max": 2900,
+            "breakfast": "4 whole eggs + 3 egg whites scrambled with tomatoes & spinach\n1 slice whole-grain toast with 2 tbsp almond butter\n1 small banana",
+            "snacks": "1 cup low-fat Greek yogurt\n1 tbsp chia seeds\n1 handful of walnuts",
+            "lunch": "200g grilled turkey breast\n1 cup quinoa\n1 cup steamed broccoli\n1 tbsp olive oil",
+            "snacks2": "1 protein shake with 2 scoops whey protein, 1 cup whole milk, 1 tbsp peanut butter, and 1 banana",
+            "dinner": "250g grilled salmon\n1 large sweet potato\n1 cup mixed greens with balsamic dressing",
+            "snacks3": "1 small bowl of cottage cheese (200g) with 1 tbsp honey",
+            "protein_percentage": 30,
+            "carbs_percentage": 50,
+            "fat_percentage": 20,
+            "notes": "This high-calorie meal plan is meant for highly active individuals, especially those looking to gain muscle mass efficiently. The increased calorie intake supports higher training intensity and promotes rapid muscle recovery and growth.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "dietplan.dietplan",
+        "pk": 9,
+        "fields": {
+            "goal": "gain weight",
+            "calorie_range_min": 2900,
+            "calorie_range_max": 3200,
+            "breakfast": "5 whole eggs + 3 egg whites scrambled with spinach & bell peppers\n2 slices whole-grain toast with 1 tbsp peanut butter\n1 large avocado",
+            "snacks": "1 cup cottage cheese (full-fat)\n20 almonds\n1 tsp honey",
+            "lunch": "250g grilled chicken breast\n1.5 cups brown rice\n1 cup steamed mixed vegetables (broccoli, carrots, bell peppers)\n1 tbsp olive oil",
+            "snacks2": "1 protein shake (2 scoops whey protein, 1 cup oat milk, 1 tbsp peanut butter)\n1 banana",
+            "dinner": "250g grilled steak (lean cut)\n1 large baked potato\n1 cup roasted Brussels sprouts & carrots\n1 tbsp olive oil",
+            "snacks3": "1 small bowl of Greek yogurt with 1 tbsp chia seeds and 10 walnuts",
+            "protein_percentage": 30,
+            "carbs_percentage": 50,
+            "fat_percentage": 20,
+            "notes": "This plan is for advanced bodybuilders and elite athletes who require a very high-calorie intake to support extreme muscle growth and intense physical activity. It's designed to maximize strength and mass gains, while minimizing fat gain.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "dietplan.dietplan",
+        "pk": 10,
+        "fields": {
+            "goal": "gain weight",
+            "calorie_range_min": 3200,
+            "calorie_range_max": 3500,
+            "breakfast": "6 whole eggs + 3 egg whites scrambled with spinach, tomatoes, and bell peppers\n2 slices whole-grain toast with 2 tbsp almond butter\n1 avocado",
+            "snacks": "1 cup full-fat cottage cheese\n1 small apple\n15 almonds",
+            "lunch": "300g grilled lean beef\n2 cups brown rice\n1 cup steamed broccoli\n1 tbsp olive oil",
+            "snacks2": "1 protein shake (3 scoops whey protein, 1 cup whole milk, 1 tbsp peanut butter)\n1 banana",
+            "dinner": "300g grilled chicken breast\n1.5 cups roasted sweet potatoes\n1 cup mixed greens with olive oil & balsamic dressing",
+            "snacks3": "1 cup Greek yogurt with 2 tbsp chia seeds and 20 almonds",
+            "protein_percentage": 30,
+            "carbs_percentage": 50,
+            "fat_percentage": 20,
+            "notes": "This extreme weight gain plan is designed for athletes who are in an intense training phase and need a high caloric intake to rapidly increase muscle mass. This plan prioritizes quality calories from protein and carbohydrates while keeping fats in check.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    }
+]

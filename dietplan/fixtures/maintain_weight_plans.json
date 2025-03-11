@@ -1,0 +1,102 @@
+[
+    {
+        "model": "dietplan.dietplan",
+        "pk": 16,
+        "fields": {
+            "goal": "maintain weight",
+            "calorie_range_min": 1800,
+            "calorie_range_max": 2100,
+            "breakfast": "3 whole eggs + 3 egg whites scrambled with spinach, mushrooms, and tomatoes\n1 slice whole-grain toast\n1 small orange",
+            "snacks": "1 small apple\n1 handful of almonds (20g)",
+            "lunch": "150g grilled chicken breast\n1 cup quinoa\n1 cup steamed broccoli\n1 tbsp olive oil",
+            "snacks2": "1 protein shake (1 scoop whey protein, 1 cup almond milk)",
+            "dinner": "200g grilled salmon\n1 medium baked potato\n1 cup roasted Brussels sprouts",
+            "snacks3": "1 small bowl of Greek yogurt with 1 tbsp chia seeds",
+            "protein_percentage": 40,
+            "carbs_percentage": 40,
+            "fat_percentage": 20,
+            "notes": "This meal plan helps maintain muscle mass while shedding fat. The moderate protein intake ensures muscle preservation, while the carbs support energy levels for workouts.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "dietplan.dietplan",
+        "pk": 17,
+        "fields": {
+            "goal": "maintain weight",
+            "calorie_range_min": 2100,
+            "calorie_range_max": 2400,
+            "breakfast": "4 scrambled eggs + 2 egg whites with spinach & tomatoes\n1 slice whole-grain toast with 1 tbsp almond butter\n1 avocado",
+            "snacks": "1 small apple\n1 handful of mixed nuts (30g)",
+            "lunch": "200g grilled turkey breast\n1 cup brown rice\n1 cup steamed asparagus\n1 tbsp olive oil",
+            "snacks2": "1 protein shake (1 scoop whey protein, 1 cup oat milk)",
+            "dinner": "250g grilled chicken breast\n1 medium sweet potato\n1 cup mixed greens with olive oil & balsamic dressing",
+            "snacks3": "1 small bowl of cottage cheese with 1 tbsp chia seeds",
+            "protein_percentage": 40,
+            "carbs_percentage": 40,
+            "fat_percentage": 20,
+            "notes": "This meal plan is for individuals who want to lose fat while preserving lean muscle mass. The high protein intake helps muscle retention, while the carb sources provide steady energy.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "dietplan.dietplan",
+        "pk": 18,
+        "fields": {
+            "goal": "maintain weight",
+            "calorie_range_min": 2400,
+            "calorie_range_max": 2700,
+            "breakfast": "5 whole eggs + 3 egg whites scrambled with spinach, bell peppers & onions\n2 slices whole-grain toast with 1 tbsp peanut butter\n1 small banana",
+            "snacks": "1 cup low-fat Greek yogurt\n1 handful of almonds (30g)",
+            "lunch": "250g grilled chicken breast\n1.5 cups quinoa\n1 cup steamed broccoli\n1 tbsp olive oil",
+            "snacks2": "1 protein shake (1.5 scoops whey protein, 1 cup almond milk)",
+            "dinner": "300g grilled salmon\n1 large baked sweet potato\n1 cup roasted Brussels sprouts",
+            "snacks3": "1 small bowl of cottage cheese with 1 tbsp chia seeds",
+            "protein_percentage": 40,
+            "carbs_percentage": 40,
+            "fat_percentage": 20,
+            "notes": "This plan is perfect for elite athletes or highly active individuals aiming for aggressive fat loss while maintaining muscle mass. The protein and carb distribution helps support lean muscle retention, while the healthy fats support overall health and hormone production.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "dietplan.dietplan",
+        "pk": 19,
+        "fields": {
+            "goal": "maintain weight",
+            "calorie_range_min": 2700,
+            "calorie_range_max": 3000,
+            "breakfast": "6 whole eggs + 4 egg whites scrambled with spinach, bell peppers & onions\n2 slices whole-grain toast with 1 tbsp almond butter\n1 avocado",
+            "snacks": "1 cup cottage cheese\n1 small apple",
+            "lunch": "300g grilled chicken breast\n2 cups brown rice\n1 cup steamed green beans\n1 tbsp olive oil",
+            "snacks2": "1 protein shake (2 scoops whey protein, 1 cup almond milk)",
+            "dinner": "350g grilled lean beef\n1 medium baked potato\n1 cup roasted Brussels sprouts and carrots",
+            "snacks3": "1 small bowl of Greek yogurt with 1 tbsp chia seeds",
+            "protein_percentage": 40,
+            "carbs_percentage": 40,
+            "fat_percentage": 20,
+            "notes": "This plan is ideal for individuals looking to achieve a high level of muscle definition while maintaining low body fat. The high protein intake ensures muscle retention while supporting fat loss.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "dietplan.dietplan",
+        "pk": 20,
+        "fields": {
+            "goal": "maintain weight",
+            "calorie_range_min": 3000,
+            "calorie_range_max": 3300,
+            "breakfast": "7 whole eggs + 4 egg whites scrambled with spinach, mushrooms, and tomatoes\n2 slices whole-grain toast with 2 tbsp almond butter\n1 avocado",
+            "snacks": "1 small apple\n1 handful of mixed nuts (30g)",
+            "lunch": "350g grilled lean beef\n2 cups quinoa\n1 cup steamed broccoli\n1 tbsp olive oil",
+            "snacks2": "1 protein shake (2 scoops whey protein, 1 cup oat milk)",
+            "dinner": "400g grilled chicken breast\n2 medium sweet potatoes\n1 cup mixed greens with olive oil & balsamic dressing",
+            "snacks3": "1 small bowl of cottage cheese with 1 tbsp chia seeds",
+            "protein_percentage": 40,
+            "carbs_percentage": 40,
+            "fat_percentage": 20,
+            "notes": "This is a very high-calorie meal plan for individuals aiming to maximize fat loss while achieving muscle definition. The macronutrient distribution ensures sufficient protein for muscle preservation and fat loss through strategic calorie control.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    }
+]

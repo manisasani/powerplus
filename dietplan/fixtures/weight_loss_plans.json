@@ -1,0 +1,102 @@
+[
+    {
+        "model": "dietplan.dietplan",
+        "pk": 1,
+        "fields": {
+            "goal": "lose weight",
+            "calorie_range_min": 1000,
+            "calorie_range_max": 1200,
+            "breakfast": "2 boiled eggs\n½ avocado\n1 slice whole-grain toast",
+            "snacks": "1 small apple\n10 almonds",
+            "lunch": "100g grilled chicken breast\nMixed greens with 1 tbsp olive oil & lemon dressing\n½ cup cooked quinoa",
+            "snacks2": "1 low-fat Greek yogurt (100g)\n1 tbsp chia seeds",
+            "dinner": "80g grilled salmon with lemon & herbs\nSteamed broccoli & carrots\n½ cup brown rice",
+            "snacks3": "",
+            "protein_percentage": 45,
+            "carbs_percentage": 35,
+            "fat_percentage": 20,
+            "notes": "This plan is for extreme weight loss and should only be followed under professional supervision. The goal is rapid fat loss with minimal muscle loss. It is not recommended for long-term use.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "dietplan.dietplan",
+        "pk": 2,
+        "fields": {
+            "goal": "lose weight",
+            "calorie_range_min": 1200,
+            "calorie_range_max": 1400,
+            "breakfast": "Scrambled egg whites (4) with spinach & mushrooms\n1 slice whole-wheat toast\n1 tsp almond butter",
+            "snacks": "1 small banana\n1 tsp peanut butter",
+            "lunch": "120g grilled turkey breast\n½ cup cooked brown rice\nSteamed broccoli & zucchini",
+            "snacks2": "1 boiled egg\n1 small cucumber",
+            "dinner": "100g grilled shrimp\nQuinoa & roasted bell peppers\n1 tsp olive oil",
+            "snacks3": "",
+            "protein_percentage": 40,
+            "carbs_percentage": 40,
+            "fat_percentage": 20,
+            "notes": "A highly sustainable plan for aggressive weight loss while maintaining muscle mass. Proper for individuals looking to lose weight but not at an extreme pace.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "dietplan.dietplan",
+        "pk": 3,
+        "fields": {
+            "goal": "lose weight",
+            "calorie_range_min": 1400,
+            "calorie_range_max": 1600,
+            "breakfast": "1 whole egg + 3 egg whites omelet\n½ avocado\n1 slice sourdough toast",
+            "snacks": "1 small handful of walnuts (15g)\n1 pear",
+            "lunch": "150g grilled salmon\nRoasted sweet potatoes\nMixed leafy greens with olive oil dressing",
+            "snacks2": "1 low-fat Greek yogurt (100g)\n1 tbsp honey",
+            "dinner": "100g grilled chicken\n½ cup quinoa\nSteamed broccoli & spinach",
+            "snacks3": "",
+            "protein_percentage": 40,
+            "carbs_percentage": 35,
+            "fat_percentage": 25,
+            "notes": "This plan provides a moderate calorie deficit, perfect for steady weight loss over a longer period. It helps in preserving muscle mass while ensuring enough energy for daily activities.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "dietplan.dietplan",
+        "pk": 4,
+        "fields": {
+            "goal": "lose weight",
+            "calorie_range_min": 1600,
+            "calorie_range_max": 1800,
+            "breakfast": "1 whole egg + 3 egg whites scrambled with mushrooms\n1 slice whole-grain toast\n1 small banana",
+            "snacks": "1 small handful of mixed nuts (20g)\n1 small orange",
+            "lunch": "150g grilled chicken breast\n1 cup mixed vegetables (carrots, zucchini, bell peppers)\n½ cup brown rice",
+            "snacks2": "1 low-fat Greek yogurt (100g)\n1 tbsp chia seeds",
+            "dinner": "120g grilled fish (e.g., cod, tuna)\nSteamed asparagus & quinoa\n1 tsp olive oil",
+            "snacks3": "",
+            "protein_percentage": 40,
+            "carbs_percentage": 35,
+            "fat_percentage": 25,
+            "notes": "Designed for individuals who are moderately active. This meal plan supports fat loss while ensuring energy levels stay balanced throughout the day.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "dietplan.dietplan",
+        "pk": 5,
+        "fields": {
+            "goal": "lose weight",
+            "calorie_range_min": 1800,
+            "calorie_range_max": 2000,
+            "breakfast": "1 whole egg + 4 egg whites scrambled with spinach & bell peppers\n1 slice whole-grain toast\n1 tsp peanut butter",
+            "snacks": "1 apple\n1 small handful of cashews (15g)",
+            "lunch": "150g grilled lean beef\n1 cup roasted sweet potatoes\n1 cup mixed greens with balsamic vinaigrette",
+            "snacks2": "1 small carrot\n1 boiled egg",
+            "dinner": "150g baked chicken breast\n½ cup quinoa\n1 cup steamed broccoli & carrots\n1 tsp olive oil",
+            "snacks3": "",
+            "protein_percentage": 40,
+            "carbs_percentage": 35,
+            "fat_percentage": 25,
+            "notes": "This plan is designed for highly active individuals who still want to maintain a calorie deficit for weight loss. It's balanced to prevent muscle loss while promoting fat reduction.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    }
+]
