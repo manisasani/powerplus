@@ -1,0 +1,62 @@
+[
+    {
+        "model": "workoutplan.workoutplan",
+        "pk": 4,
+        "fields": {
+            "goal": "muscle gain",
+            "experience_level": "intermediate",
+            "sessions_per_week": 3,
+            "rest_between_sets": 90,
+            "day1_title": "Chest and Triceps",
+            "day1_exercises": "Warm-up: 10-15 minutes of brisk walking or light jogging\n\nFlat Barbell Bench Press: 4 sets, 6-8 reps\nIncline Dumbbell Press: 3 sets, 8-10 reps\nChest Dips (Weighted if possible): 3 sets, 8-10 reps\nChest Fly (Cable or Machine): 3 sets, 10-12 reps\nTricep Pushdown (Cable): 3 sets, 10-12 reps\nOverhead Tricep Extension (Dumbbell): 3 sets, 10-12 reps\n\nCool-down: 5-10 minutes of chest and tricep stretches",
+            "day2_title": "Back and Biceps",
+            "day2_exercises": "Warm-up: 10-15 minutes of light jogging or bike\n\nPull-ups (Weighted if possible): 4 sets, 6-8 reps\nBarbell Deadlift: 4 sets, 6-8 reps\nSeated Cable Row: 3 sets, 8-10 reps\nOne-Arm Dumbbell Row: 3 sets, 8-10 reps per side\nBarbell Curl: 3 sets, 8-10 reps\nHammer Curl (Dumbbell): 3 sets, 10-12 reps\n\nCool-down: 5-10 minutes of back and bicep stretches",
+            "day3_title": "Legs and Shoulders",
+            "day3_exercises": "Warm-up: 10-15 minutes on a stationary bike or brisk walking\n\nSquat (Barbell): 4 sets, 6-8 reps\nLeg Press: 4 sets, 8-10 reps\nRomanian Deadlift (Dumbbells): 3 sets, 8-10 reps\nOverhead Shoulder Press (Barbell or Dumbbells): 4 sets, 6-8 reps\nLateral Raise (Dumbbells): 3 sets, 10-12 reps\nFront Raise (Dumbbells): 3 sets, 10-12 reps\n\nCool-down: 5-10 minutes of leg and shoulder stretches",
+            "notes": "Aim for progressive overload by gradually increasing the weight or reps every week.\nFocus on maintaining proper form for every exercise to prevent injury and maximize results.\nRest between sets should be 60-90 seconds for most exercises, but for compound lifts (like squats and deadlifts), you can take 90-120 seconds.\nMake sure to stay hydrated and get enough protein for optimal muscle growth.\nThese programs are designed to balance both strength and hypertrophy (muscle growth) training.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "workoutplan.workoutplan",
+        "pk": 5,
+        "fields": {
+            "goal": "muscle gain",
+            "experience_level": "intermediate",
+            "sessions_per_week": 4,
+            "rest_between_sets": 90,
+            "day1_title": "Chest and Triceps",
+            "day1_exercises": "Warm-up: 10-15 minutes of brisk walking or light jogging\n\nFlat Barbell Bench Press: 4 sets, 6-8 reps\nIncline Dumbbell Press: 3 sets, 8-10 reps\nChest Fly (Cable or Machine): 3 sets, 10-12 reps\nDips (Weighted if possible): 3 sets, 6-8 reps\nTricep Pushdown (Cable): 3 sets, 10-12 reps\nOverhead Tricep Extension (Dumbbell): 3 sets, 10-12 reps\n\nCool-down: 5-10 minutes of chest and tricep stretches",
+            "day2_title": "Back and Biceps",
+            "day2_exercises": "Warm-up: 10-15 minutes of light jogging or bike\n\nPull-ups (Weighted if possible): 4 sets, 6-8 reps\nBarbell Deadlift: 4 sets, 6-8 reps\nSeated Cable Row: 3 sets, 8-10 reps\nBarbell Row: 3 sets, 8-10 reps\nEZ Bar Curl: 3 sets, 8-10 reps\nHammer Curl (Dumbbell): 3 sets, 10-12 reps\n\nCool-down: 5-10 minutes of back and bicep stretches",
+            "day3_title": "Legs",
+            "day3_exercises": "Warm-up: 10-15 minutes on a stationary bike or brisk walking\n\nSquat (Barbell): 4 sets, 6-8 reps\nLeg Press: 4 sets, 8-10 reps\nLunges (Dumbbells): 3 sets, 10-12 reps per leg\nLeg Curl (Machine): 3 sets, 10-12 reps\nLeg Extension (Machine): 3 sets, 10-12 reps\nCalf Raises (Machine): 4 sets, 12-15 reps\n\nCool-down: 5-10 minutes of leg stretches",
+            "day4_title": "Shoulders and Abs",
+            "day4_exercises": "Warm-up: 10-15 minutes of light jogging or bike\n\nOverhead Shoulder Press (Barbell or Dumbbells): 4 sets, 6-8 reps\nLateral Raise (Dumbbells): 3 sets, 10-12 reps\nFront Raise (Dumbbells): 3 sets, 10-12 reps\nUpright Row (Barbell): 3 sets, 8-10 reps\nPlank: 3 sets, 1 minute\nRussian Twists: 3 sets, 20 reps\n\nCool-down: 5-10 minutes of shoulder and ab stretches",
+            "notes": "Aim for progressive overload by gradually increasing the weight or reps every week.\nFocus on maintaining proper form for every exercise to prevent injury and maximize results.\nRest between sets should be 60-90 seconds for most exercises, but for compound lifts (like squats and deadlifts), you can take 90-120 seconds.\nMake sure to stay hydrated and get enough protein for optimal muscle growth.\nThese programs are designed to balance both strength and hypertrophy (muscle growth) training.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "workoutplan.workoutplan",
+        "pk": 6,
+        "fields": {
+            "goal": "muscle gain",
+            "experience_level": "intermediate",
+            "sessions_per_week": 5,
+            "rest_between_sets": 90,
+            "day1_title": "Chest and Triceps",
+            "day1_exercises": "Warm-up: 10-15 minutes of brisk walking or light jogging\n\nFlat Barbell Bench Press: 4 sets, 6-8 reps\nIncline Dumbbell Press: 3 sets, 8-10 reps\nChest Fly (Cable or Machine): 3 sets, 10-12 reps\nDips (Weighted if possible): 3 sets, 6-8 reps\nTricep Pushdown (Cable): 3 sets, 10-12 reps\nOverhead Tricep Extension (Dumbbell): 3 sets, 10-12 reps\n\nCool-down: 5-10 minutes of chest and tricep stretches",
+            "day2_title": "Back and Biceps",
+            "day2_exercises": "Warm-up: 10-15 minutes of light jogging or bike\n\nPull-ups (Weighted if possible): 4 sets, 6-8 reps\nBarbell Deadlift: 4 sets, 6-8 reps\nSeated Cable Row: 3 sets, 8-10 reps\nBarbell Row: 3 sets, 8-10 reps\nEZ Bar Curl: 3 sets, 8-10 reps\nHammer Curl (Dumbbell): 3 sets, 10-12 reps\n\nCool-down: 5-10 minutes of back and bicep stretches",
+            "day3_title": "Legs",
+            "day3_exercises": "Warm-up: 10-15 minutes on a stationary bike or brisk walking\n\nSquat (Barbell): 4 sets, 6-8 reps\nLeg Press: 4 sets, 8-10 reps\nLunges (Dumbbells): 3 sets, 10-12 reps per leg\nLeg Curl (Machine): 3 sets, 10-12 reps\nLeg Extension (Machine): 3 sets, 10-12 reps\nCalf Raises (Machine): 4 sets, 12-15 reps\n\nCool-down: 5-10 minutes of leg stretches",
+            "day4_title": "Shoulders and Abs",
+            "day4_exercises": "Warm-up: 10-15 minutes of light jogging or bike\n\nOverhead Shoulder Press (Barbell or Dumbbells): 4 sets, 6-8 reps\nLateral Raise (Dumbbells): 3 sets, 10-12 reps\nFront Raise (Dumbbells): 3 sets, 10-12 reps\nUpright Row (Barbell): 3 sets, 8-10 reps\nPlank: 3 sets, 1 minute\nRussian Twists: 3 sets, 20 reps\n\nCool-down: 5-10 minutes of shoulder and ab stretches",
+            "day5_title": "Full Body (Compound Focus)",
+            "day5_exercises": "Warm-up: 10-15 minutes of light jogging or bike\n\nBarbell Squat: 4 sets, 6-8 reps\nDeadlift (Barbell): 4 sets, 6-8 reps\nFlat Barbell Bench Press: 4 sets, 6-8 reps\nPull-ups (Weighted if possible): 4 sets, 6-8 reps\nOverhead Shoulder Press (Barbell or Dumbbells): 4 sets, 6-8 reps\n\nCool-down: 5-10 minutes of full-body stretches",
+            "notes": "Aim for progressive overload by gradually increasing the weight or reps every week.\nFocus on maintaining proper form for every exercise to prevent injury and maximize results.\nRest between sets should be 60-90 seconds for most exercises, but for compound lifts (like squats and deadlifts), you can take 90-120 seconds.\nMake sure to stay hydrated and get enough protein for optimal muscle growth.\nThese programs are designed to balance both strength and hypertrophy (muscle growth) training.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    }
+]

@@ -1,0 +1,86 @@
+[
+    {
+        "model": "workoutplan.workoutplan",
+        "pk": 14,
+        "fields": {
+            "goal": "fat loss",
+            "experience_level": "intermediate",
+            "sessions_per_week": 3,
+            "rest_between_sets": 60,
+            "day1_title": "Strength & HIIT Combo",
+            "day1_exercises": "Main Workout:\nSquats – 4x8\nIncline Dumbbell Press – 4x10\nBent-over Rows – 3x10\nPlank-to-Push-ups – 3x12\n\nHIIT Finisher (3 rounds):\n20 sec Sprint\n40 sec Rest",
+            "day2_title": "Functional Strength & Core",
+            "day2_exercises": "Main Workout:\nDeadlifts – 3x8\nPull-ups (Weighted if possible) – 3x8\nLunges – 3x10/leg\nRussian Twists (Weighted) – 3x20\n\nCardio:\n25 min incline treadmill walk",
+            "day3_title": "Explosive Movements & Conditioning",
+            "day3_exercises": "Main Workout:\nBox Jumps – 3x12\nKettlebell Swings – 3x15\nBurpees – 3x10\nJump Rope – 3x2 min\n\nHIIT Finisher (4 rounds):\n30 sec High Knees\n30 sec Jump Squats",
+            "notes": "Best For: Those with a solid foundation who want efficient fat-burning workouts.\nProgressive overload: Increase intensity gradually.\nFocus on form and explosive movements.\nMaintain a caloric deficit for optimal fat loss.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "workoutplan.workoutplan",
+        "pk": 15,
+        "fields": {
+            "goal": "fat loss",
+            "experience_level": "intermediate",
+            "sessions_per_week": 4,
+            "rest_between_sets": 60,
+            "day1_title": "Upper Body Power & Strength",
+            "day1_exercises": "Main Workout:\nBench Press – 4x8\nSeated Row – 3x10\nLateral Raises – 3x12\nDips (Weighted if possible) – 3x10\n\nCardio:\n20 min moderate cycling",
+            "day2_title": "Lower Body & HIIT Burn",
+            "day2_exercises": "Main Workout:\nDeadlifts – 3x8\nBulgarian Split Squats – 3x10/leg\nJump Squats – 3x12\nStanding Calf Raises – 3x15\n\nHIIT Finisher (3 rounds):\n20 sec Sprint\n40 sec Rest",
+            "day3_title": "Upper Body Metabolic Training",
+            "day3_exercises": "Main Workout:\nPull-ups (Weighted if possible) – 4x6\nDumbbell Shoulder Press – 3x10\nFace Pulls – 3x12\nBiceps Curls – 3x12\n\nCardio:\n25 min incline treadmill walk",
+            "day4_title": "Lower Body & Core",
+            "day4_exercises": "Main Workout:\nSquats – 3x8\nRomanian Deadlifts – 3x10\nGlute Bridges – 3x12\nHanging Leg Raises – 3x12\n\nHIIT Finisher (4 rounds):\n20 sec Sprint\n40 sec Walk",
+            "notes": "Best For: Those who want more frequent training without burnout.\nFocus on compound movements and HIIT combinations.\nEnsure proper form during all exercises.\nMaintain a caloric deficit for optimal fat loss.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "workoutplan.workoutplan",
+        "pk": 16,
+        "fields": {
+            "goal": "fat loss",
+            "experience_level": "intermediate",
+            "sessions_per_week": 5,
+            "rest_between_sets": 60,
+            "day1_title": "Push (Chest, Shoulders, Triceps)",
+            "day1_exercises": "Main Workout:\nIncline Dumbbell Press – 4x8\nDumbbell Shoulder Press – 3x10\nDips – 3x10\n\nHIIT Finisher:\nJump Rope – 3x1 min",
+            "day2_title": "Pull (Back, Biceps, Core)",
+            "day2_exercises": "Main Workout:\nDeadlifts – 3x8\nPull-ups (Weighted if possible) – 3x6\nSeated Row – 3x10\nHanging Knee Raises – 3x12\n\nCardio:\n25 min treadmill walk",
+            "day3_title": "Legs & Conditioning",
+            "day3_exercises": "Main Workout:\nSquats – 3x8\nLunges – 3x10/leg\nJump Squats – 3x12\n\nHIIT Finisher (3 rounds):\n30 sec High Knees\n30 sec Jump Squats",
+            "day4_title": "Full Body HIIT Circuit",
+            "day4_exercises": "Kettlebell Swings – 3x15\nBurpees – 3x12\nJump Rope – 3x2 min\nPlank Hold – 3x60 sec",
+            "day5_title": "Active Recovery & Cardio",
+            "day5_exercises": "40 min incline treadmill walk or cycling",
+            "notes": "Best For: Those who can handle more training volume for fat loss.\nBalance between strength training and cardio.\nFocus on intensity and proper form.\nMaintain a caloric deficit for optimal fat loss.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "workoutplan.workoutplan",
+        "pk": 17,
+        "fields": {
+            "goal": "fat loss",
+            "experience_level": "intermediate",
+            "sessions_per_week": 6,
+            "rest_between_sets": 60,
+            "day1_title": "Strength & HIIT (Upper Focus)",
+            "day1_exercises": "Main Workout:\nBench Press – 4x8\nPull-ups – 3x8\nDumbbell Shoulder Press – 3x10\n\nHIIT Finisher:\nSprint Intervals – 5x20 sec",
+            "day2_title": "Strength & HIIT (Lower Focus)",
+            "day2_exercises": "Main Workout:\nSquats – 4x8\nLunges – 3x10/leg\nGlute Bridges – 3x12\n\nCardio:\n20 min incline treadmill",
+            "day3_title": "Functional Circuit & Cardio",
+            "day3_exercises": "Kettlebell Swings – 3x15\nBurpees – 3x12\nBattle Ropes – 3x30 sec\nJump Rope – 3x2 min",
+            "day4_title": "Push Day",
+            "day4_exercises": "Main Workout:\nIncline Dumbbell Press – 3x10\nLateral Raises – 3x12\nDips – 3x10\n\nHIIT Finisher (3 rounds):\n30 sec Jump Squats\n30 sec High Knees",
+            "day5_title": "Pull Day",
+            "day5_exercises": "Main Workout:\nDeadlifts – 3x8\nPull-ups (Weighted if possible) – 3x6\nFace Pulls – 3x12\n\nCardio:\n25 min treadmill walk",
+            "day6_title": "Legs & HIIT Burn",
+            "day6_exercises": "Main Workout:\nSquats – 3x8\nRomanian Deadlifts – 3x10\nJump Squats – 3x12\n\nHIIT Finisher:\nSprint Intervals – 4x20 sec",
+            "notes": "Best For: Those ready for high-volume fat-burning workouts.\nHigh intensity and frequency requires proper recovery.\nFocus on form and progressive overload.\nMaintain a caloric deficit for optimal fat loss.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    }
+]

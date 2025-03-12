@@ -1,0 +1,86 @@
+[
+    {
+        "model": "workoutplan.workoutplan",
+        "pk": 7,
+        "fields": {
+            "goal": "muscle gain",
+            "experience_level": "expert",
+            "sessions_per_week": 3,
+            "rest_between_sets": 90,
+            "day1_title": "Full Body (Strength & Volume)",
+            "day1_exercises": "Squat – 4x6\nBench Press – 4x6\nBent-over Row – 4x8\nOverhead Press – 3x8\nRomanian Deadlift – 3x8\nDips (Weighted) – 3x10\nHanging Leg Raises – 3x15",
+            "day2_title": "Full Body (Explosive & Endurance)",
+            "day2_exercises": "Deadlift – 4x5\nPull-ups (Weighted) – 4x6\nIncline Dumbbell Press – 4x8\nBulgarian Split Squat – 3x8/leg\nLateral Raises – 3x12\nFace Pulls – 3x12\nPlank Hold – 3x60 sec",
+            "day3_title": "Full Body (High Volume & Isolation)",
+            "day3_exercises": "Leg Press – 4x12\nDumbbell Bench Press – 4x10\nSeated Row – 4x10\nWalking Lunges – 3x12/leg\nDumbbell Shoulder Press – 3x10\nCable Triceps Pushdown – 3x12\nCalf Raises – 3x15\nHanging Knee Tucks – 3x15",
+            "notes": "Rest Between Sets: 45-90 sec for hypertrophy, 2 min for heavy lifts.\nProgressive overload: Increase weights weekly.\nRest & Recovery: Ensure at least one full rest day weekly.\nNutrition: High-protein diet to support hypertrophy.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "workoutplan.workoutplan",
+        "pk": 8,
+        "fields": {
+            "goal": "muscle gain",
+            "experience_level": "expert",
+            "sessions_per_week": 4,
+            "rest_between_sets": 90,
+            "day1_title": "Upper Body (Push Focus)",
+            "day1_exercises": "Bench Press – 4x6\nOverhead Press – 3x8\nIncline Dumbbell Press – 3x10\nDips (Weighted) – 3x10\nCable Triceps Pushdown – 3x12",
+            "day2_title": "Lower Body (Strength Focus)",
+            "day2_exercises": "Squats – 4x6\nRomanian Deadlift – 3x8\nBulgarian Split Squat – 3x8/leg\nStanding Calf Raises – 3x15",
+            "day3_title": "Upper Body (Pull Focus)",
+            "day3_exercises": "Deadlift – 4x5\nPull-ups (Weighted) – 4x6\nBent-over Rows – 4x8\nSeated Face Pulls – 3x12\nDumbbell Biceps Curls – 3x12",
+            "day4_title": "Lower Body (Hypertrophy Focus)",
+            "day4_exercises": "Leg Press – 4x12\nLunges – 3x12/leg\nSeated Calf Raises – 3x15\nHanging Knee Tucks – 3x15",
+            "notes": "Rest Between Sets: 45-90 sec.\nProgressive overload: Increase weights weekly.\nRest & Recovery: Ensure at least one full rest day weekly.\nNutrition: High-protein diet to support hypertrophy.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "workoutplan.workoutplan",
+        "pk": 9,
+        "fields": {
+            "goal": "muscle gain",
+            "experience_level": "expert",
+            "sessions_per_week": 5,
+            "rest_between_sets": 90,
+            "day1_title": "Push (Chest, Shoulders, Triceps)",
+            "day1_exercises": "Bench Press – 4x6\nIncline Dumbbell Press – 4x8\nDumbbell Shoulder Press – 3x10\nLateral Raises – 3x12\nTriceps Dips – 3x10",
+            "day2_title": "Pull (Back, Biceps, Rear Delts)",
+            "day2_exercises": "Deadlifts – 4x5\nPull-ups (Weighted) – 4x6\nSeated Row – 4x10\nFace Pulls – 3x12\nDumbbell Biceps Curls – 3x12",
+            "day3_title": "Legs (Strength & Volume)",
+            "day3_exercises": "Squats – 4x6\nRomanian Deadlifts – 3x8\nLunges – 3x12/leg\nStanding Calf Raises – 3x15",
+            "day4_title": "Upper Body (Hypertrophy Focus)",
+            "day4_exercises": "Incline Dumbbell Press – 4x8\nOverhead Press – 3x8\nBent-over Row – 4x8\nLateral Raises – 3x12\nCable Triceps Pushdown – 3x12",
+            "day5_title": "Legs (Isolation & Recovery Focus)",
+            "day5_exercises": "Leg Press – 4x12\nBulgarian Split Squat – 3x8/leg\nSeated Calf Raises – 3x15\nHanging Knee Tucks – 3x15",
+            "notes": "Rest Between Sets: 45-90 sec.\nProgressive overload: Increase weights weekly.\nRest & Recovery: Ensure at least one full rest day weekly.\nNutrition: High-protein diet to support hypertrophy.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "workoutplan.workoutplan",
+        "pk": 10,
+        "fields": {
+            "goal": "muscle gain",
+            "experience_level": "expert",
+            "sessions_per_week": 6,
+            "rest_between_sets": 90,
+            "day1_title": "Chest & Triceps",
+            "day1_exercises": "Bench Press – 4x6\nIncline Dumbbell Press – 4x8\nDips (Weighted) – 3x10\nCable Flys – 3x12\nTriceps Rope Pushdowns – 3x12",
+            "day2_title": "Back & Biceps",
+            "day2_exercises": "Deadlifts – 4x5\nPull-ups (Weighted) – 4x6\nSeated Row – 4x10\nFace Pulls – 3x12\nHammer Curls – 3x12",
+            "day3_title": "Legs & Core",
+            "day3_exercises": "Squats – 4x6\nRomanian Deadlifts – 3x8\nLunges – 3x12/leg\nSeated Calf Raises – 3x15\nHanging Leg Raises – 3x15",
+            "day4_title": "Shoulders & Arms",
+            "day4_exercises": "Dumbbell Shoulder Press – 4x8\nLateral Raises – 3x12\nBent-over Reverse Flys – 3x12\nBarbell Biceps Curls – 3x12\nCable Triceps Extensions – 3x12",
+            "day5_title": "Upper Body Strength",
+            "day5_exercises": "Bench Press – 4x6\nBent-over Row – 4x8\nPull-ups (Weighted) – 4x6\nOverhead Press – 3x8\nDips (Weighted) – 3x10",
+            "day6_title": "Legs & Core (Hypertrophy Focus)",
+            "day6_exercises": "Leg Press – 4x12\nBulgarian Split Squat – 3x8/leg\nSeated Calf Raises – 3x15\nHanging Knee Tucks – 3x15",
+            "notes": "Rest Between Sets: 45-90 sec.\nProgressive overload: Increase weights weekly.\nRest & Recovery: Ensure at least one full rest day weekly.\nNutrition: High-protein diet to support hypertrophy.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    }
+]

@@ -1,0 +1,86 @@
+[
+    {
+        "model": "workoutplan.workoutplan",
+        "pk": 29,
+        "fields": {
+            "goal": "fitness",
+            "experience_level": "expert",
+            "sessions_per_week": 3,
+            "rest_between_sets": 60,
+            "day1_title": "Full Body Strength & Power",
+            "day1_exercises": "Main Workout:\nBack Squats – 5x5\nBench Press – 4x8\nPull-ups (Weighted if possible) – 4x10\nPlank Hold (Weighted) – 3x40 sec\n\nCardio:\n20 min interval treadmill run",
+            "day2_title": "Functional Strength & Core",
+            "day2_exercises": "Main Workout:\nDeadlifts – 5x5\nBulgarian Split Squats – 3x12\nHanging Leg Raises – 3x12\nBattle Ropes – 3x30 sec\n\nHIIT:\n10 rounds of 30 sec sprint + 30 sec rest",
+            "day3_title": "Circuit Training & Mobility",
+            "day3_exercises": "Perform 4 rounds with minimal rest:\nJump Rope – 1 min\nKettlebell Goblet Squats – 12 reps\nBox Jumps – 12 reps\nSled Pushes – 30m\nTurkish Get-Ups – 3x6 reps each side",
+            "notes": "Best For: Advanced athletes looking for efficiency with maximum output.\nRest Between Sets: 30-90 sec (strength), minimal rest in circuits.\nFocus on form and explosive power.\nEnsure proper recovery between intense sessions.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "workoutplan.workoutplan",
+        "pk": 30,
+        "fields": {
+            "goal": "fitness",
+            "experience_level": "expert",
+            "sessions_per_week": 4,
+            "rest_between_sets": 60,
+            "day1_title": "Upper Body Strength",
+            "day1_exercises": "Main Workout:\nIncline Barbell Press – 5x5\nWeighted Dips – 3x12\nFace Pulls – 3x12\nBattle Ropes – 3x30 sec\n\nCardio:\n20 min treadmill run",
+            "day2_title": "Lower Body Strength & Power",
+            "day2_exercises": "Main Workout:\nTrap Bar Deadlifts – 5x5\nBulgarian Split Squats – 3x12\nHanging Leg Raises – 3x12\n\nHIIT:\n5 rounds of 40 sec row + 20 sec rest",
+            "day3_title": "Functional Conditioning & Mobility",
+            "day3_exercises": "Perform 4 rounds:\nJump Rope – 1 min\nKettlebell Swings – 15 reps\nBox Jumps – 12 reps\nFarmer's Carry – 30m",
+            "day4_title": "Recovery & Mobility",
+            "day4_exercises": "Yoga / Active Recovery (30-40 min)",
+            "notes": "Best For: Those who want to blend strength training with high-intensity endurance work.\nBalance between heavy lifting and conditioning.\nFocus on explosive movements and proper form.\nEnsure adequate recovery between sessions.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "workoutplan.workoutplan",
+        "pk": 31,
+        "fields": {
+            "goal": "fitness",
+            "experience_level": "expert",
+            "sessions_per_week": 5,
+            "rest_between_sets": 60,
+            "day1_title": "Push Strength",
+            "day1_exercises": "Main Workout:\nBarbell Bench Press – 5x5\nOverhead Dumbbell Press – 4x8\nRing Dips – 3x12\n\nCardio:\n10 min sprint intervals",
+            "day2_title": "Pull Strength",
+            "day2_exercises": "Main Workout:\nDeadlifts – 5x5\nWeighted Chin-ups – 4x8\nFace Pulls – 3x12\n\nCardio:\n15 min rowing",
+            "day3_title": "Lower Body & Core",
+            "day3_exercises": "Front Squats – 4x8\nRomanian Deadlifts – 3x12\nPlank Holds – 3x40 sec",
+            "day4_title": "High-Intensity Circuits",
+            "day4_exercises": "Perform 4 rounds:\nBattle Ropes – 30 sec\nSled Push – 30m\nJump Lunges – 12 reps",
+            "day5_title": "Active Recovery & Mobility",
+            "day5_exercises": "Yoga / Cycling / Swimming (30 min)\nCore Work (Planks, Russian Twists, Hanging Leg Raises)",
+            "notes": "Best For: High-performing individuals who need both power and stamina.\nFocus on compound movements and explosive power.\nBalance between strength and conditioning.\nEnsure proper recovery between sessions.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "workoutplan.workoutplan",
+        "pk": 32,
+        "fields": {
+            "goal": "fitness",
+            "experience_level": "expert",
+            "sessions_per_week": 6,
+            "rest_between_sets": 60,
+            "day1_title": "Strength & Power",
+            "day1_exercises": "Back Squats – 5x5\nOverhead Press – 4x8\nRomanian Deadlifts – 3x12",
+            "day2_title": "Functional Strength & Core",
+            "day2_exercises": "Main Workout:\nWeighted Step-ups – 3x12\nChin-ups – 4x10\nPlank with Shoulder Taps – 3x30 sec\n\nCardio:\n15 min incline walking",
+            "day3_title": "HIIT & Endurance",
+            "day3_exercises": "Sprint Intervals (30 sec on, 30 sec off) x10\nBattle Ropes – 30 sec x3\nFarmer's Carry – 3x20m",
+            "day4_title": "Lower Body Strength",
+            "day4_exercises": "Front Squats – 4x8\nDeadlifts – 4x6\nBulgarian Split Squats – 3x12",
+            "day5_title": "Functional Circuits & Mobility",
+            "day5_exercises": "Jump Rope – 1 min\nWall Balls – 15 reps\nKettlebell Swings – 12 reps",
+            "day6_title": "Active Recovery & Core",
+            "day6_exercises": "Yoga / Swimming / Cycling (30 min)\nCore Circuits (Planks, Leg Raises, Russian Twists)",
+            "notes": "Best For: Those who want a well-rounded elite-level fitness program.\nHigh volume requires proper recovery management.\nFocus on form and explosive movements.\nEnsure adequate nutrition and rest.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    }
+]

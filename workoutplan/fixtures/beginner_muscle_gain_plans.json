@@ -1,0 +1,62 @@
+[
+    {
+        "model": "workoutplan.workoutplan",
+        "pk": 1,
+        "fields": {
+            "goal": "muscle gain",
+            "experience_level": "beginner",
+            "sessions_per_week": 3,
+            "rest_between_sets": 90,
+            "day1_title": "Chest and Triceps",
+            "day1_exercises": "Warm-up: 10-15 minutes of walking or light jogging\n\nBench Press (Barbell): 4 sets, 8-10 reps\nIncline Dumbbell Press: 3 sets, 8-10 reps\nChest Fly (Cable): 3 sets, 10-12 reps\nDips (Assisted if needed): 3 sets, 8-10 reps\nTricep Pushdown (Cable): 3 sets, 12 reps\nOverhead Tricep Extension (Dumbbell): 3 sets, 12 reps\n\nCool-down: 5-10 minutes of chest and tricep stretches",
+            "day2_title": "Legs and Abs",
+            "day2_exercises": "Warm-up: 10-15 minutes on a stationary bike or brisk walking\n\nSquats (Barbell): 4 sets, 8-10 reps\nLeg Press: 4 sets, 10-12 reps\nLunges (Dumbbells): 3 sets, 10 reps per leg\nLeg Curl (Machine): 3 sets, 12 reps\nLeg Extension (Machine): 3 sets, 12 reps\nPlank: 3 sets, 30-45 seconds\nRussian Twists: 3 sets, 20 reps\n\nCool-down: 5-10 minutes of leg and ab stretches",
+            "day3_title": "Back and Shoulders",
+            "day3_exercises": "Warm-up: 10-15 minutes of jogging or stationary bike\n\nLat Pulldown (Wide Grip): 4 sets, 8-10 reps\nBarbell Row: 4 sets, 8-10 reps\nSeated Cable Row: 3 sets, 8-10 reps\nShoulder Press (Dumbbells): 3 sets, 8-10 reps\nLateral Raise (Dumbbells): 3 sets, 10-12 reps\nFace Pulls (Cable): 3 sets, 12 reps\n\nCool-down: 5-10 minutes of back and shoulder stretches",
+            "notes": "The focus in this program is on compound exercises to build mass and strength, ensuring you target multiple muscle groups in each session.\nAlways warm up before starting your workout and cool down after each session with proper stretching.\nChoose a weight that challenges you, especially in the last 2-3 reps of each set.\nRest between sets should be 60-90 seconds for optimal results.\nIf you experience any pain or discomfort, stop immediately and consult a professional.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "workoutplan.workoutplan",
+        "pk": 2,
+        "fields": {
+            "goal": "muscle gain",
+            "experience_level": "beginner",
+            "sessions_per_week": 4,
+            "rest_between_sets": 90,
+            "day1_title": "Chest and Triceps",
+            "day1_exercises": "Warm-up: 10-15 minutes of walking or light jogging\n\nBench Press (Barbell): 4 sets, 8-10 reps\nIncline Dumbbell Press: 3 sets, 8-10 reps\nChest Fly (Cable): 3 sets, 10-12 reps\nDips (Assisted if needed): 3 sets, 8-10 reps\nTricep Pushdown (Cable): 3 sets, 12 reps\nOverhead Tricep Extension (Dumbbell): 3 sets, 12 reps\n\nCool-down: 5-10 minutes of chest and tricep stretches",
+            "day2_title": "Back and Shoulders",
+            "day2_exercises": "Warm-up: 10-15 minutes of jogging or stationary bike\n\nLat Pulldown (Wide Grip): 4 sets, 8-10 reps\nBarbell Row: 4 sets, 8-10 reps\nSeated Cable Row: 3 sets, 8-10 reps\nShoulder Press (Dumbbells): 3 sets, 8-10 reps\nLateral Raise (Dumbbells): 3 sets, 10-12 reps\nFace Pulls (Cable): 3 sets, 12 reps\n\nCool-down: 5-10 minutes of back and shoulder stretches",
+            "day3_title": "Legs and Abs",
+            "day3_exercises": "Warm-up: 10-15 minutes on a stationary bike or brisk walking\n\nSquats (Barbell): 4 sets, 8-10 reps\nLeg Press: 4 sets, 10-12 reps\nLunges (Dumbbells): 3 sets, 10 reps per leg\nLeg Curl (Machine): 3 sets, 12 reps\nLeg Extension (Machine): 3 sets, 12 reps\nPlank: 3 sets, 30-45 seconds\nRussian Twists: 3 sets, 20 reps\n\nCool-down: 5-10 minutes of leg and ab stretches",
+            "day4_title": "Arms",
+            "day4_exercises": "Warm-up: 10-15 minutes of walking or light jogging\n\nBarbell Curl: 4 sets, 8-10 reps\nHammer Curl (Dumbbells): 3 sets, 10-12 reps\nPreacher Curl: 3 sets, 8-10 reps\nOverhead Tricep Extension (Dumbbell): 3 sets, 12 reps\nTricep Dips (Assisted if needed): 3 sets, 8-10 reps\nConcentration Curl (Dumbbell): 3 sets, 10-12 reps\n\nCool-down: 5-10 minutes of arm stretches",
+            "notes": "The focus in this program is on compound exercises to build mass and strength, ensuring you target multiple muscle groups in each session.\nAlways warm up before starting your workout and cool down after each session with proper stretching.\nChoose a weight that challenges you, especially in the last 2-3 reps of each set.\nRest between sets should be 60-90 seconds for optimal results.\nIf you experience any pain or discomfort, stop immediately and consult a professional.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "workoutplan.workoutplan",
+        "pk": 3,
+        "fields": {
+            "goal": "muscle gain",
+            "experience_level": "beginner",
+            "sessions_per_week": 5,
+            "rest_between_sets": 90,
+            "day1_title": "Chest and Triceps",
+            "day1_exercises": "Warm-up: 10-15 minutes of walking or light jogging\n\nBench Press (Barbell): 4 sets, 8-10 reps\nIncline Dumbbell Press: 3 sets, 8-10 reps\nChest Fly (Cable): 3 sets, 10-12 reps\nDips (Assisted if needed): 3 sets, 8-10 reps\nTricep Pushdown (Cable): 3 sets, 12 reps\nOverhead Tricep Extension (Dumbbell): 3 sets, 12 reps\n\nCool-down: 5-10 minutes of chest and tricep stretches",
+            "day2_title": "Back and Shoulders",
+            "day2_exercises": "Warm-up: 10-15 minutes of jogging or stationary bike\n\nLat Pulldown (Wide Grip): 4 sets, 8-10 reps\nBarbell Row: 4 sets, 8-10 reps\nSeated Cable Row: 3 sets, 8-10 reps\nShoulder Press (Dumbbells): 3 sets, 8-10 reps\nLateral Raise (Dumbbells): 3 sets, 10-12 reps\nFace Pulls (Cable): 3 sets, 12 reps\n\nCool-down: 5-10 minutes of back and shoulder stretches",
+            "day3_title": "Legs and Abs",
+            "day3_exercises": "Warm-up: 10-15 minutes on a stationary bike or brisk walking\n\nSquats (Barbell): 4 sets, 8-10 reps\nLeg Press: 4 sets, 10-12 reps\nLunges (Dumbbells): 3 sets, 10 reps per leg\nLeg Curl (Machine): 3 sets, 12 reps\nLeg Extension (Machine): 3 sets, 12 reps\nPlank: 3 sets, 30-45 seconds\nRussian Twists: 3 sets, 20 reps\n\nCool-down: 5-10 minutes of leg and ab stretches",
+            "day4_title": "Arms",
+            "day4_exercises": "Warm-up: 10-15 minutes of walking or light jogging\n\nBarbell Curl: 4 sets, 8-10 reps\nHammer Curl (Dumbbells): 3 sets, 10-12 reps\nPreacher Curl: 3 sets, 8-10 reps\nOverhead Tricep Extension (Dumbbell): 3 sets, 12 reps\nTricep Dips (Assisted if needed): 3 sets, 8-10 reps\nConcentration Curl (Dumbbell): 3 sets, 10-12 reps\n\nCool-down: 5-10 minutes of arm stretches",
+            "day5_title": "Shoulders and Lower Back",
+            "day5_exercises": "Warm-up: 10-15 minutes of jogging or stationary bike\n\nDeadlift (Barbell): 4 sets, 6-8 reps\nBarbell Shrugs: 3 sets, 10-12 reps\nArnold Press (Dumbbells): 3 sets, 8-10 reps\nUpright Row (Barbell): 3 sets, 10-12 reps\nRear Delt Fly (Dumbbells): 3 sets, 10-12 reps\n\nCool-down: 5-10 minutes of shoulder and lower back stretches",
+            "notes": "The focus in this program is on compound exercises to build mass and strength, ensuring you target multiple muscle groups in each session.\nAlways warm up before starting your workout and cool down after each session with proper stretching.\nChoose a weight that challenges you, especially in the last 2-3 reps of each set.\nRest between sets should be 60-90 seconds for optimal results.\nIf you experience any pain or discomfort, stop immediately and consult a professional.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    }
+]

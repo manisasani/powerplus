@@ -1,0 +1,62 @@
+[
+    {
+        "model": "workoutplan.workoutplan",
+        "pk": 11,
+        "fields": {
+            "goal": "fat loss",
+            "experience_level": "beginner",
+            "sessions_per_week": 3,
+            "rest_between_sets": 45,
+            "day1_title": "Strength & Cardio Blast",
+            "day1_exercises": "Main Workout:\nSquats – 3x10\nPush-ups – 3x12\nBent-over Rows (Dumbbell/Barbell) – 3x10\nDumbbell Shoulder Press – 3x12\nPlank Hold – 3x45 sec\n\nHIIT Finisher (3 rounds):\n30 sec Jump Squats\n30 sec Mountain Climbers\n30 sec Rest",
+            "day2_title": "Full Body Metabolic Training",
+            "day2_exercises": "Main Workout:\nDeadlifts – 3x8\nPull-ups (Assisted if needed) – 3x6\nDumbbell Lunges – 3x10/leg\nDumbbell Lateral Raises – 3x12\nHanging Knee Raises – 3x12\n\nCardio:\n20-30 min moderate-intensity cycling or jogging",
+            "day3_title": "Circuit Training (Fat Burn Focus)",
+            "day3_exercises": "Main Workout:\nKettlebell Swings – 3x12\nBurpees – 3x10\nJump Rope – 3x1 min\nDumbbell Rows – 3x10\nPush-ups to Shoulder Tap – 3x12\n\nHIIT Finisher (4 rounds):\n20 sec Sprint\n40 sec Walk",
+            "notes": "Best For: Beginners looking for a simple but effective fat-burning routine.\nStructure: Strength Training + HIIT Finishers.\nRest Between Sets: 30-60 sec to keep heart rate elevated.\nProgressive overload: Slightly increase intensity each week.\nConsistency is key: Stick to the program for at least 8-12 weeks.\nNutrition: Maintain a calorie deficit for fat loss.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "workoutplan.workoutplan",
+        "pk": 12,
+        "fields": {
+            "goal": "fat loss",
+            "experience_level": "beginner",
+            "sessions_per_week": 4,
+            "rest_between_sets": 45,
+            "day1_title": "Upper Body Strength & Cardio",
+            "day1_exercises": "Main Workout:\nBench Press – 3x8\nBent-over Rows – 3x10\nDumbbell Shoulder Press – 3x10\nCable Triceps Pushdowns – 3x12\nPlank Hold – 3x45 sec\n\nCardio:\n15-20 min moderate-intensity treadmill walk (incline)",
+            "day2_title": "Lower Body Burn",
+            "day2_exercises": "Main Workout:\nSquats – 3x8\nRomanian Deadlifts – 3x10\nBulgarian Split Squat – 3x8/leg\nCalf Raises – 3x15\n\nHIIT Finisher (3 rounds):\n30 sec Jump Squats\n30 sec High Knees\n30 sec Rest",
+            "day3_title": "Upper Body Metabolic Training",
+            "day3_exercises": "Main Workout:\nPull-ups (Assisted if needed) – 3x6\nDumbbell Chest Press – 3x10\nFace Pulls – 3x12\nDumbbell Curls – 3x12\n\nCardio:\n20 min cycling or rowing machine",
+            "day4_title": "Lower Body & Core Focus",
+            "day4_exercises": "Main Workout:\nDeadlifts – 3x8\nLunges – 3x10/leg\nGlute Bridges – 3x12\nHanging Knee Raises – 3x12\n\nHIIT Finisher (4 rounds):\n20 sec Sprint\n40 sec Walk",
+            "notes": "Best For: Beginners who want slightly more intensity and frequency.\nRest Between Sets: 30-45 sec.\nProgressive overload: Slightly increase intensity each week.\nConsistency is key: Stick to the program for at least 8-12 weeks.\nNutrition: Maintain a calorie deficit for fat loss.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "workoutplan.workoutplan",
+        "pk": 13,
+        "fields": {
+            "goal": "fat loss",
+            "experience_level": "beginner",
+            "sessions_per_week": 5,
+            "rest_between_sets": 45,
+            "day1_title": "Push Day (Chest, Shoulders, Triceps)",
+            "day1_exercises": "Main Workout:\nIncline Dumbbell Press – 3x8\nDumbbell Shoulder Press – 3x10\nDips (Assisted if needed) – 3x10\nLateral Raises – 3x12\n\nHIIT Finisher:\n3 rounds of Jump Rope (30 sec on, 30 sec off)",
+            "day2_title": "Pull Day (Back, Biceps, Core)",
+            "day2_exercises": "Main Workout:\nDeadlifts – 3x8\nPull-ups (Assisted if needed) – 3x6\nSeated Row – 3x10\nDumbbell Biceps Curls – 3x12\n\nCardio:\n20-30 min steady-state treadmill walk (incline)",
+            "day3_title": "Leg Day (Lower Body Burn)",
+            "day3_exercises": "Main Workout:\nSquats – 3x8\nRomanian Deadlifts – 3x10\nLunges – 3x10/leg\nStanding Calf Raises – 3x15\n\nHIIT Finisher (3 rounds):\n30 sec Jump Squats\n30 sec High Knees",
+            "day4_title": "Full Body Circuit Training",
+            "day4_exercises": "Main Workout:\nKettlebell Swings – 3x12\nBurpees – 3x10\nJump Rope – 3x1 min\nPush-ups to Shoulder Tap – 3x12\nHanging Knee Raises – 3x12\n\nHIIT Finisher (4 rounds):\n20 sec Sprint\n40 sec Walk",
+            "day5_title": "Active Recovery & Cardio",
+            "day5_exercises": "30-40 min low-intensity steady-state (LISS) cardio (walking, cycling, elliptical)\nMobility drills & stretching",
+            "notes": "Best For: Beginners who can commit to more frequent training while keeping recovery in check.\nRest Between Sets: 30-45 sec.\nProgressive overload: Slightly increase intensity each week.\nConsistency is key: Stick to the program for at least 8-12 weeks.\nNutrition: Maintain a calorie deficit for fat loss.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    }
+]

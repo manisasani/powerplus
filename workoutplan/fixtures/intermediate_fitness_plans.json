@@ -1,0 +1,86 @@
+[
+    {
+        "model": "workoutplan.workoutplan",
+        "pk": 25,
+        "fields": {
+            "goal": "fitness",
+            "experience_level": "intermediate",
+            "sessions_per_week": 3,
+            "rest_between_sets": 45,
+            "day1_title": "Strength & Mobility",
+            "day1_exercises": "Main Workout:\nBack Squats – 4x8\nBench Press – 4x8\nBent-over Rows – 4x10\nPlank with Shoulder Taps – 3x30 sec\n\nCardio:\n15 min incline treadmill run",
+            "day2_title": "Functional Strength & HIIT",
+            "day2_exercises": "Main Workout:\nRomanian Deadlifts – 3x12\nKettlebell Swings – 3x15\nHanging Leg Raises – 3x12\nBattle Ropes – 3x30 sec\n\nHIIT:\n10 rounds of 30 sec sprint + 30 sec rest",
+            "day3_title": "Circuit Training & Mobility",
+            "day3_exercises": "Perform 3 rounds with minimal rest:\nJump Rope – 1 min\nKettlebell Goblet Squats – 12 reps\nBox Jumps – 10 reps\nSled Pushes – 20m\nHanging Knee Raises – 3x12",
+            "notes": "Best For: Intermediate trainees looking for efficient, well-rounded workouts.\nProgressive overload with structured strength training.\nRest Between Sets: 30-60 sec (strength), minimal rest in circuits.\nFocus on form and controlled movements.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "workoutplan.workoutplan",
+        "pk": 26,
+        "fields": {
+            "goal": "fitness",
+            "experience_level": "intermediate",
+            "sessions_per_week": 4,
+            "rest_between_sets": 45,
+            "day1_title": "Upper Body Strength",
+            "day1_exercises": "Main Workout:\nIncline Dumbbell Press – 4x8\nPull-ups (Assisted if needed) – 4x8\nDips – 3x12\n\nCardio:\n15 min treadmill run",
+            "day2_title": "Lower Body & Core",
+            "day2_exercises": "Main Workout:\nDeadlifts – 4x6\nBulgarian Split Squats – 3x12\nPlank with Weighted Reach – 3x30 sec\n\nHIIT:\n5 rounds of 40 sec row + 20 sec rest",
+            "day3_title": "Full Body Circuit",
+            "day3_exercises": "Perform 4 rounds:\nBattle Ropes – 30 sec\nWall Balls – 15 reps\nJump Lunges – 12 reps\nFarmer's Carry – 20m",
+            "day4_title": "Recovery & Mobility",
+            "day4_exercises": "Yoga / Active Recovery (30-40 min)",
+            "notes": "Best For: Those looking to enhance strength, endurance, and overall fitness.\nBalance between strength and conditioning.\nFocus on proper form and progression.\nEnsure adequate recovery between sessions.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "workoutplan.workoutplan",
+        "pk": 27,
+        "fields": {
+            "goal": "fitness",
+            "experience_level": "intermediate",
+            "sessions_per_week": 5,
+            "rest_between_sets": 45,
+            "day1_title": "Push Day (Upper Body Strength)",
+            "day1_exercises": "Main Workout:\nBarbell Bench Press – 4x8\nOverhead Dumbbell Press – 3x10\nTriceps Dips – 3x12\n\nCardio:\n10 min sprint intervals",
+            "day2_title": "Pull Day (Back & Biceps)",
+            "day2_exercises": "Main Workout:\nDeadlifts – 4x6\nLat Pulldowns – 4x8\nFace Pulls – 3x12\n\nCardio:\n15 min rowing",
+            "day3_title": "Lower Body Strength",
+            "day3_exercises": "Front Squats – 4x8\nRomanian Deadlifts – 3x12\nGlute Bridges – 3x15\nPlank Hold – 3x40 sec",
+            "day4_title": "Functional HIIT & Endurance",
+            "day4_exercises": "Perform 4 rounds:\nBox Jumps – 12 reps\nKettlebell Swings – 15 reps\nSled Push – 20m\nRowing Machine – 1 min",
+            "day5_title": "Active Recovery / Core Work",
+            "day5_exercises": "Hanging Leg Raises – 3x12\nRussian Twists – 3x20\n30 min incline walking / cycling",
+            "notes": "Best For: Intermediate athletes looking for a structured weekly progression.\nBalance between strength, cardio, and recovery.\nFocus on progressive overload.\nMaintain proper form throughout.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "workoutplan.workoutplan",
+        "pk": 28,
+        "fields": {
+            "goal": "fitness",
+            "experience_level": "intermediate",
+            "sessions_per_week": 6,
+            "rest_between_sets": 45,
+            "day1_title": "Strength & Power",
+            "day1_exercises": "Barbell Squats – 5x6\nOverhead Press – 4x8\nRomanian Deadlifts – 3x12",
+            "day2_title": "Functional Strength & Core",
+            "day2_exercises": "Main Workout:\nWeighted Step-ups – 3x12\nChin-ups – 4x10\nPlank with Shoulder Taps – 3x30 sec\n\nCardio:\n15 min incline walking",
+            "day3_title": "HIIT & Endurance",
+            "day3_exercises": "Sprint Intervals (30 sec on, 30 sec off) x10\nBattle Ropes – 30 sec x3\nFarmer's Carry – 3x20m",
+            "day4_title": "Lower Body Strength",
+            "day4_exercises": "Front Squats – 4x8\nDeadlifts – 4x6\nBulgarian Split Squats – 3x12",
+            "day5_title": "Functional Circuits & Mobility",
+            "day5_exercises": "Jump Rope – 1 min\nWall Balls – 15 reps\nKettlebell Swings – 12 reps",
+            "day6_title": "Active Recovery & Core",
+            "day6_exercises": "Yoga / Swimming / Cycling (30 min)\nCore Circuits (Planks, Leg Raises, Russian Twists)",
+            "notes": "Best For: Those who can handle higher training volume while balancing recovery.\nFocus on performance and conditioning.\nEnsure proper recovery between sessions.\nMaintain proper form despite increased volume.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    }
+]

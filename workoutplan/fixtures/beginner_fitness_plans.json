@@ -1,0 +1,62 @@
+[
+    {
+        "model": "workoutplan.workoutplan",
+        "pk": 22,
+        "fields": {
+            "goal": "fitness",
+            "experience_level": "beginner",
+            "sessions_per_week": 3,
+            "rest_between_sets": 60,
+            "day1_title": "Full Body Strength & Mobility",
+            "day1_exercises": "Main Workout:\nGoblet Squats – 3x12\nPush-ups (Knee/Regular) – 3x10\nBent-over Dumbbell Rows – 3x12\nPlank Hold – 3x30 sec\n\nCardio:\n20 min brisk walking or cycling",
+            "day2_title": "Functional Strength & Core",
+            "day2_exercises": "Main Workout:\nDeadlifts (Light Weight) – 3x10\nDumbbell Shoulder Press – 3x12\nGlute Bridges – 3x12\nHanging Knee Raises – 3x12\n\nCardio:\n15 min treadmill walk",
+            "day3_title": "Circuit Training & Cardio",
+            "day3_exercises": "Perform 3 rounds with minimal rest:\nJump Rope – 1 min\nBodyweight Squats – 15 reps\nDumbbell Deadlifts – 12 reps\nRowing Machine – 1 min\nRussian Twists – 3x20",
+            "notes": "Best For: Beginners who want an effective, simple, and sustainable fitness routine.\nFocus on proper form and technique.\nGradually increase weights and intensity.\nEnsure proper warm-up before each session.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "workoutplan.workoutplan",
+        "pk": 23,
+        "fields": {
+            "goal": "fitness",
+            "experience_level": "beginner",
+            "sessions_per_week": 4,
+            "rest_between_sets": 60,
+            "day1_title": "Upper Body & Core",
+            "day1_exercises": "Main Workout:\nDumbbell Bench Press – 3x10\nLat Pulldowns – 3x12\nBicep Curls – 3x15\nPlank Hold – 3x30 sec\n\nCardio:\n20 min steady-state cycling",
+            "day2_title": "Lower Body & Cardio Burn",
+            "day2_exercises": "Main Workout:\nBodyweight Squats – 3x15\nRomanian Deadlifts – 3x10\nStep-ups – 3x12/leg\nHanging Knee Raises – 3x12\n\nCardio:\n15 min incline treadmill walk",
+            "day3_title": "Functional Circuit & Mobility",
+            "day3_exercises": "Perform 3 rounds:\nJump Rope – 1 min\nKettlebell Deadlifts – 12 reps\nWall Balls – 15 reps\nRowing Machine – 2 min",
+            "day4_title": "Full Body Strength & Endurance",
+            "day4_exercises": "Main Workout:\nGoblet Squats – 3x12\nPush-ups (Knee/Regular) – 3x10\nDumbbell Shoulder Press – 3x12\nRussian Twists – 3x20\n\nCardio:\n25 min light jogging",
+            "notes": "Best For: Beginners who want to add more variety and frequency to their training.\nFocus on building strength and endurance simultaneously.\nMaintain proper form throughout exercises.\nGradually increase workout intensity.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "workoutplan.workoutplan",
+        "pk": 24,
+        "fields": {
+            "goal": "fitness",
+            "experience_level": "beginner",
+            "sessions_per_week": 5,
+            "rest_between_sets": 60,
+            "day1_title": "Push Day (Upper Body Strength)",
+            "day1_exercises": "Main Workout:\nIncline Dumbbell Press – 3x10\nOverhead Shoulder Press – 3x12\nTriceps Dips (Bench) – 3x10\n\nCardio:\n10 min jogging",
+            "day2_title": "Pull Day (Back & Biceps)",
+            "day2_exercises": "Main Workout:\nLat Pulldown – 3x12\nDumbbell Rows – 3x12\nBicep Curls – 3x15\n\nCardio:\n15 min rowing machine",
+            "day3_title": "Lower Body & Core",
+            "day3_exercises": "Main Workout:\nGoblet Squats – 3x12\nRomanian Deadlifts – 3x10\nGlute Bridges – 3x12\nPlank Hold – 3x30 sec\n\nCardio:\n20 min incline treadmill walk",
+            "day4_title": "Functional Circuit Training",
+            "day4_exercises": "Perform 3 rounds:\nJump Rope – 1 min\nDumbbell Deadlifts – 12 reps\nWall Balls – 15 reps\nRowing Machine – 2 min",
+            "day5_title": "Active Recovery & Mobility",
+            "day5_exercises": "30 min brisk walking, yoga, or light cycling",
+            "notes": "Best For: Beginners who want a structured weekly plan focusing on strength, mobility, and cardiovascular fitness.\nBalance between strength training and cardio.\nFocus on proper form and technique.\nGradually increase intensity as fitness improves.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    }
+]

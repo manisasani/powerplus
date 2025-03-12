@@ -1,0 +1,86 @@
+[
+    {
+        "model": "workoutplan.workoutplan",
+        "pk": 18,
+        "fields": {
+            "goal": "fat loss",
+            "experience_level": "expert",
+            "sessions_per_week": 3,
+            "rest_between_sets": 45,
+            "day1_title": "Strength & HIIT (Full Body)",
+            "day1_exercises": "Main Workout:\nFront Squats – 4x8\nDeadlifts – 3x8\nDumbbell Snatches – 3x10\nBattle Ropes – 3x30 sec\n\nHIIT Finisher (5 rounds):\n20 sec Sprint\n10 sec Rest",
+            "day2_title": "Power & Endurance (Explosiveness + Core)",
+            "day2_exercises": "Main Workout:\nBox Jumps – 4x12\nKettlebell Swings – 3x15\nBurpees to Pull-ups – 3x10\nHanging Leg Raises – 3x12\n\nCardio:\n30 min incline treadmill walk",
+            "day3_title": "Circuit Training & Cardio Burn",
+            "day3_exercises": "Perform 3 rounds with no rest:\nJump Rope – 2 min\nKettlebell Deadlifts – 3x12\nWall Balls – 3x15\nRowing Machine – 2 min\nSled Pushes – 30m",
+            "notes": "Best For: Those who want an efficient fat-burning plan with high-intensity workouts.\nFocus on explosive movements and minimal rest periods.\nMaintain proper form despite high intensity.\nEnsure adequate recovery between sessions.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "workoutplan.workoutplan",
+        "pk": 19,
+        "fields": {
+            "goal": "fat loss",
+            "experience_level": "expert",
+            "sessions_per_week": 4,
+            "rest_between_sets": 45,
+            "day1_title": "Upper Body Strength & HIIT",
+            "day1_exercises": "Main Workout:\nBench Press – 4x8\nChin-ups (Weighted if possible) – 3x6\nDips – 3x10\nFace Pulls – 3x12\n\nHIIT Finisher:\nJump Rope – 5x1 min",
+            "day2_title": "Lower Body Burn & Core",
+            "day2_exercises": "Main Workout:\nDeadlifts – 3x8\nBulgarian Split Squats – 3x10/leg\nJump Squats – 3x15\nAb Rollouts – 3x12\n\nCardio:\n20 min stair climber",
+            "day3_title": "Functional Circuit & Cardio",
+            "day3_exercises": "Main Workout:\nKettlebell Swings – 3x20\nBurpees to Box Jumps – 3x10\nSled Pushes – 3x30m\nJump Rope – 3x2 min\n\nHIIT Finisher (4 rounds):\n30 sec Sprint\n30 sec Walk",
+            "day4_title": "Full Body Strength & Conditioning",
+            "day4_exercises": "Main Workout:\nFront Squats – 4x8\nPull-ups (Weighted) – 3x6\nDumbbell Snatches – 3x10\nPlank Hold – 3x60 sec\n\nCardio:\nRowing Machine – 25 min",
+            "notes": "Best For: Those who can handle frequent high-intensity training.\nFocus on compound movements and metabolic conditioning.\nEnsure proper recovery between sessions.\nMaintain high intensity throughout workouts.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "workoutplan.workoutplan",
+        "pk": 20,
+        "fields": {
+            "goal": "fat loss",
+            "experience_level": "expert",
+            "sessions_per_week": 5,
+            "rest_between_sets": 45,
+            "day1_title": "Push Day",
+            "day1_exercises": "Main Workout:\nIncline Dumbbell Press – 4x8\nDumbbell Shoulder Press – 3x10\nDips – 3x10\n\nHIIT Finisher:\nJump Rope – 5x1 min",
+            "day2_title": "Pull Day",
+            "day2_exercises": "Main Workout:\nDeadlifts – 3x8\nPull-ups (Weighted) – 3x6\nBent-over Rows – 3x10\nHanging Leg Raises – 3x12\n\nCardio:\n30 min treadmill walk",
+            "day3_title": "Lower Body & Plyometrics",
+            "day3_exercises": "Main Workout:\nSquats – 3x8\nRomanian Deadlifts – 3x10\nJump Squats – 3x12\n\nHIIT Finisher:\nSprint Intervals – 4x20 sec",
+            "day4_title": "Full Body Circuit Training",
+            "day4_exercises": "Battle Ropes – 3x30 sec\nBurpees – 3x12\nRowing Machine – 2 min\nPlank-to-Push-ups – 3x12",
+            "day5_title": "Active Recovery & Cardio",
+            "day5_exercises": "40 min incline treadmill walk or cycling",
+            "notes": "Best For: Those who want the ultimate mix of fat burning, muscle retention, and endurance.\nBalance between strength and conditioning work.\nFocus on intensity and proper form.\nEnsure adequate recovery between sessions.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "workoutplan.workoutplan",
+        "pk": 21,
+        "fields": {
+            "goal": "fat loss",
+            "experience_level": "expert",
+            "sessions_per_week": 6,
+            "rest_between_sets": 45,
+            "day1_title": "Upper Body Strength & HIIT",
+            "day1_exercises": "Main Workout:\nBench Press – 4x8\nPull-ups (Weighted) – 3x6\nDips – 3x10\n\nHIIT Finisher:\nSprint Intervals – 5x20 sec",
+            "day2_title": "Lower Body & Plyometrics",
+            "day2_exercises": "Main Workout:\nSquats – 4x8\nBulgarian Split Squats – 3x10/leg\nJump Lunges – 3x15\nHanging Knee Raises – 3x12\n\nCardio:\n30 min incline treadmill",
+            "day3_title": "Functional Circuit & Core",
+            "day3_exercises": "Kettlebell Swings – 3x20\nBurpees to Box Jumps – 3x10\nBattle Ropes – 3x30 sec\nJump Rope – 3x2 min",
+            "day4_title": "Push Day",
+            "day4_exercises": "Main Workout:\nIncline Dumbbell Press – 3x10\nLateral Raises – 3x12\nDips – 3x10\n\nHIIT Finisher:\nJump Rope – 4x1 min",
+            "day5_title": "Pull Day",
+            "day5_exercises": "Main Workout:\nDeadlifts – 3x8\nPull-ups (Weighted) – 3x6\nFace Pulls – 3x12\n\nCardio:\nRowing Machine – 30 min",
+            "day6_title": "Legs & HIIT Burn",
+            "day6_exercises": "Main Workout:\nSquats – 3x8\nRomanian Deadlifts – 3x10\nJump Squats – 3x12\n\nHIIT Finisher:\nSprint Intervals – 4x20 sec",
+            "notes": "Best For: Athletes and bodybuilders aiming for maximum leanness.\nHigh intensity and frequency requires proper recovery.\nFocus on form despite high intensity.\nEnsure adequate nutrition and rest between sessions.",
+            "created_at": "2024-03-10T00:00:00Z"
+        }
+    }
+]
