@@ -182,5 +182,634 @@
             "created_at": "2024-03-10T00:00:00Z",
             "updated_at": "2024-03-10T00:00:00Z"
         }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 9,
+        "fields": {
+            "name": "Orange",
+            "category": 3,
+            "calories": 47,
+            "protein": 0.9,
+            "carbs": 11.8,
+            "fat": 0.1,
+            "serving_size": 100,
+            "common_serving": "1 medium",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 10,
+        "fields": {
+            "name": "Broccoli",
+            "category": 4,
+            "calories": 34,
+            "protein": 2.8,
+            "carbs": 7.0,
+            "fat": 0.4,
+            "serving_size": 100,
+            "common_serving": "1 cup chopped",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 11,
+        "fields": {
+            "name": "Spinach",
+            "category": 4,
+            "calories": 23,
+            "protein": 2.9,
+            "carbs": 3.6,
+            "fat": 0.4,
+            "serving_size": 100,
+            "common_serving": "1 cup",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 12,
+        "fields": {
+            "name": "Sweet Potato",
+            "category": 4,
+            "calories": 86,
+            "protein": 1.6,
+            "carbs": 20.1,
+            "fat": 0.1,
+            "serving_size": 100,
+            "common_serving": "1 medium",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 13,
+        "fields": {
+            "name": "Brown Rice",
+            "category": 5,
+            "calories": 111,
+            "protein": 2.6,
+            "carbs": 23.0,
+            "fat": 0.9,
+            "serving_size": 100,
+            "common_serving": "1/2 cup cooked",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 14,
+        "fields": {
+            "name": "Oatmeal",
+            "category": 5,
+            "calories": 68,
+            "protein": 2.4,
+            "carbs": 12.0,
+            "fat": 1.4,
+            "serving_size": 100,
+            "common_serving": "1/2 cup dry",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 15,
+        "fields": {
+            "name": "Quinoa",
+            "category": 5,
+            "calories": 120,
+            "protein": 4.4,
+            "carbs": 21.3,
+            "fat": 1.9,
+            "serving_size": 100,
+            "common_serving": "1/2 cup cooked",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 16,
+        "fields": {
+            "name": "Beef (Lean)",
+            "category": 2,
+            "calories": 250,
+            "protein": 26.0,
+            "carbs": 0.0,
+            "fat": 17.0,
+            "serving_size": 100,
+            "common_serving": "3 oz (85g)",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 17,
+        "fields": {
+            "name": "Tuna (Canned in Water)",
+            "category": 2,
+            "calories": 116,
+            "protein": 26.0,
+            "carbs": 0.0,
+            "fat": 1.0,
+            "serving_size": 100,
+            "common_serving": "1 can (142g)",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 18,
+        "fields": {
+            "name": "Turkey Breast",
+            "category": 2,
+            "calories": 157,
+            "protein": 30.0,
+            "carbs": 0.0,
+            "fat": 3.6,
+            "serving_size": 100,
+            "common_serving": "3 oz (85g)",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 19,
+        "fields": {
+            "name": "Lentils (Cooked)",
+            "category": 2,
+            "calories": 116,
+            "protein": 9.0,
+            "carbs": 20.0,
+            "fat": 0.4,
+            "serving_size": 100,
+            "common_serving": "1/2 cup cooked",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 20,
+        "fields": {
+            "name": "Black Beans (Cooked)",
+            "category": 2,
+            "calories": 132,
+            "protein": 8.9,
+            "carbs": 23.7,
+            "fat": 0.5,
+            "serving_size": 100,
+            "common_serving": "1/2 cup cooked",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 21,
+        "fields": {
+            "name": "Chickpeas (Cooked)",
+            "category": 2,
+            "calories": 164,
+            "protein": 8.9,
+            "carbs": 27.4,
+            "fat": 2.6,
+            "serving_size": 100,
+            "common_serving": "1/2 cup cooked",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 22,
+        "fields": {
+            "name": "Grapes",
+            "category": 3,
+            "calories": 69,
+            "protein": 0.7,
+            "carbs": 18.1,
+            "fat": 0.2,
+            "serving_size": 100,
+            "common_serving": "1 cup",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 23,
+        "fields": {
+            "name": "Strawberries",
+            "category": 3,
+            "calories": 32,
+            "protein": 0.7,
+            "carbs": 7.7,
+            "fat": 0.3,
+            "serving_size": 100,
+            "common_serving": "1 cup",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 24,
+        "fields": {
+            "name": "Pineapple",
+            "category": 3,
+            "calories": 50,
+            "protein": 0.5,
+            "carbs": 13.1,
+            "fat": 0.1,
+            "serving_size": 100,
+            "common_serving": "1 cup chunks",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 25,
+        "fields": {
+            "name": "Kiwi",
+            "category": 3,
+            "calories": 61,
+            "protein": 1.1,
+            "carbs": 14.7,
+            "fat": 0.5,
+            "serving_size": 100,
+            "common_serving": "1 medium",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 26,
+        "fields": {
+            "name": "Watermelon",
+            "category": 3,
+            "calories": 30,
+            "protein": 0.6,
+            "carbs": 7.6,
+            "fat": 0.2,
+            "serving_size": 100,
+            "common_serving": "1 cup diced",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 27,
+        "fields": {
+            "name": "Carrots",
+            "category": 4,
+            "calories": 41,
+            "protein": 0.9,
+            "carbs": 9.6,
+            "fat": 0.2,
+            "serving_size": 100,
+            "common_serving": "1 medium",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 28,
+        "fields": {
+            "name": "Cabbage",
+            "category": 4,
+            "calories": 25,
+            "protein": 1.3,
+            "carbs": 5.8,
+            "fat": 0.1,
+            "serving_size": 100,
+            "common_serving": "1 cup chopped",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 29,
+        "fields": {
+            "name": "Tomato",
+            "category": 4,
+            "calories": 18,
+            "protein": 0.9,
+            "carbs": 3.9,
+            "fat": 0.2,
+            "serving_size": 100,
+            "common_serving": "1 medium",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 30,
+        "fields": {
+            "name": "Cucumber",
+            "category": 4,
+            "calories": 15,
+            "protein": 0.7,
+            "carbs": 3.6,
+            "fat": 0.1,
+            "serving_size": 100,
+            "common_serving": "1 cup sliced",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 16,
+        "fields": {
+            "name": "Beef (Lean)",
+            "category": 2,
+            "calories": 250,
+            "protein": 26.0,
+            "carbs": 0.0,
+            "fat": 17.0,
+            "serving_size": 100,
+            "common_serving": "3 oz (85g)",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 17,
+        "fields": {
+            "name": "Tuna (Canned in Water)",
+            "category": 2,
+            "calories": 116,
+            "protein": 26.0,
+            "carbs": 0.0,
+            "fat": 1.0,
+            "serving_size": 100,
+            "common_serving": "1 can (142g)",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 18,
+        "fields": {
+            "name": "Turkey Breast",
+            "category": 2,
+            "calories": 157,
+            "protein": 30.0,
+            "carbs": 0.0,
+            "fat": 3.6,
+            "serving_size": 100,
+            "common_serving": "3 oz (85g)",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 19,
+        "fields": {
+            "name": "Lentils (Cooked)",
+            "category": 2,
+            "calories": 116,
+            "protein": 9.0,
+            "carbs": 20.0,
+            "fat": 0.4,
+            "serving_size": 100,
+            "common_serving": "1/2 cup cooked",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 20,
+        "fields": {
+            "name": "Whole Wheat Bread",
+            "category": 5,
+            "calories": 247,
+            "protein": 13.0,
+            "carbs": 41.0,
+            "fat": 3.4,
+            "serving_size": 100,
+            "common_serving": "1 slice",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 21,
+        "fields": {
+            "name": "Whole Wheat Pasta (Cooked)",
+            "category": 5,
+            "calories": 124,
+            "protein": 5.3,
+            "carbs": 26.5,
+            "fat": 0.8,
+            "serving_size": 100,
+            "common_serving": "1 cup cooked",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 22,
+        "fields": {
+            "name": "Barley (Cooked)",
+            "category": 5,
+            "calories": 123,
+            "protein": 2.3,
+            "carbs": 28.2,
+            "fat": 0.4,
+            "serving_size": 100,
+            "common_serving": "1 cup cooked",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 23,
+        "fields": {
+            "name": "Corn (Cooked)",
+            "category": 5,
+            "calories": 96,
+            "protein": 3.4,
+            "carbs": 21.0,
+            "fat": 1.2,
+            "serving_size": 100,
+            "common_serving": "1/2 cup",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 24,
+        "fields": {
+            "name": "Mixed Nuts (Unsalted)",
+            "category": 6,
+            "calories": 607,
+            "protein": 20.0,
+            "carbs": 20.0,
+            "fat": 54.0,
+            "serving_size": 100,
+            "common_serving": "1/4 cup",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 25,
+        "fields": {
+            "name": "Almonds",
+            "category": 6,
+            "calories": 579,
+            "protein": 21.2,
+            "carbs": 21.7,
+            "fat": 49.9,
+            "serving_size": 100,
+            "common_serving": "23 almonds",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 26,
+        "fields": {
+            "name": "Walnuts",
+            "category": 6,
+            "calories": 654,
+            "protein": 15.2,
+            "carbs": 13.7,
+            "fat": 65.2,
+            "serving_size": 100,
+            "common_serving": "14 halves",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 27,
+        "fields": {
+            "name": "Dark Chocolate (70% cocoa)",
+            "category": 6,
+            "calories": 598,
+            "protein": 7.8,
+            "carbs": 45.9,
+            "fat": 42.6,
+            "serving_size": 100,
+            "common_serving": "1 square (10g)",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 28,
+        "fields": {
+            "name": "Honey",
+            "category": 6,
+            "calories": 304,
+            "protein": 0.3,
+            "carbs": 82.4,
+            "fat": 0.0,
+            "serving_size": 100,
+            "common_serving": "1 tablespoon",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 29,
+        "fields": {
+            "name": "Bell Pepper",
+            "category": 4,
+            "calories": 31,
+            "protein": 1.0,
+            "carbs": 6.0,
+            "fat": 0.3,
+            "serving_size": 100,
+            "common_serving": "1 medium",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
+    },
+    {
+        "model": "calorie.fooditem",
+        "pk": 30,
+        "fields": {
+            "name": "Zucchini",
+            "category": 4,
+            "calories": 17,
+            "protein": 1.2,
+            "carbs": 3.1,
+            "fat": 0.3,
+            "serving_size": 100,
+            "common_serving": "1 medium",
+            "is_verified": true,
+            "created_at": "2024-03-10T00:00:00Z",
+            "updated_at": "2024-03-10T00:00:00Z"
+        }
     }
 ]
