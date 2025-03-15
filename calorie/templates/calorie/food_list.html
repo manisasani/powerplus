@@ -1,60 +1,237 @@
 {% extends 'calorie/base_calorie.html' %}
 
-{% block breadcrumb %}
-<li class="breadcrumb-item active">Food List</li>
-{% endblock %}
-
 {% block calorie_content %}
 <div class="card mb-4">
     <div class="card-header">
-        <h4 class="card-title mb-0">Search Foods</h4>
+        <h4 class="card-title mb-0">
+            <i class="ph ph-magnifying-glass me-2"></i>
+            Search Foods
+        </h4>
     </div>
     <div class="card-body">
-        <form method="get" class="row g-3">
-            <div class="col-md-6">
-                {{ form.query }}
-            </div>
-            <div class="col-md-4">
-                {{ form.category }}
-            </div>
-            <div class="col-md-2">
-                <button type="submit" class="btn btn-primary w-100">Search</button>
+        <form method="get" class="search-form">
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="search-input">
+                        <i class="ph ph-magnifying-glass"></i>
+                        {{ form.query }}
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="category-select">
+                        <i class="ph ph-folder"></i>
+                        {{ form.category }}
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-primary w-100">
+                        <i class="ph ph-magnifying-glass me-2"></i>
+                        Search
+                    </button>
+                </div>
             </div>
         </form>
     </div>
 </div>
 
-<div class="row">
+<div class="row g-4">
     {% for food in foods %}
-        <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h5 class="card-title">{{ food.name }}</h5>
+        <div class="col-md-6 col-lg-4">
+            <div class="food-card">
+                <div class="food-header">
+                    <h5>{{ food.name }}</h5>
                     {% if food.category %}
-                        <h6 class="card-subtitle mb-2 text-muted">{{ food.category.name }}</h6>
+                        <span class="category-tag">{{ food.category.name }}</span>
                     {% endif %}
-                    <div class="nutrition-info">
-                        <p class="mb-1"><strong>Per 100g:</strong></p>
-                        <ul class="list-unstyled">
-                            <li>Calories: {{ food.calories }}kcal</li>
-                            <li>Protein: {{ food.protein }}g</li>
-                            <li>Carbs: {{ food.carbs }}g</li>
-                            <li>Fat: {{ food.fat }}g</li>
-                        </ul>
+                </div>
+                
+                <div class="nutrition-grid">
+                    <div class="nutrition-item">
+                        <div class="nutrition-icon">
+                            <i class="ph ph-flame"></i>
+                        </div>
+                        <div class="nutrition-content">
+                            <small>Calories</small>
+                            <span>{{ food.calories }}kcal</span>
+                        </div>
+                    </div>
+                    
+                    <div class="nutrition-item">
+                        <div class="nutrition-icon">
+                            <i class="ph ph-barbell"></i>
+                        </div>
+                        <div class="nutrition-content">
+                            <small>Protein</small>
+                            <span>{{ food.protein }}g</span>
+                        </div>
+                    </div>
+                    
+                    <div class="nutrition-item">
+                        <div class="nutrition-icon">
+                            <i class="ph ph-bowl-food"></i>
+                        </div>
+                        <div class="nutrition-content">
+                            <small>Carbs</small>
+                            <span>{{ food.carbs }}g</span>
+                        </div>
+                    </div>
+                    
+                    <div class="nutrition-item">
+                        <div class="nutrition-icon">
+                            <i class="ph ph-drop"></i>
+                        </div>
+                        <div class="nutrition-content">
+                            <small>Fat</small>
+                            <span>{{ food.fat }}g</span>
+                        </div>
                     </div>
                 </div>
-                <div class="card-footer">
+                
+                <div class="food-footer">
                     <a href="{% url 'calorie:food_detail' food.pk %}" 
-                       class="btn btn-primary btn-sm">Add to Log</a>
+                       class="btn btn-primary w-100">
+                        <i class="ph ph-plus me-2"></i>
+                        Add to Log
+                    </a>
                 </div>
             </div>
         </div>
     {% empty %}
         <div class="col-12">
-            <div class="alert alert-info">
-                No foods found matching your criteria.
+            <div class="empty-state">
+                <i class="ph ph-magnifying-glass"></i>
+                <h5>No foods found</h5>
+                <p>Try adjusting your search criteria</p>
             </div>
         </div>
     {% endfor %}
 </div>
+
+<style>
+    .search-form {
+        margin-bottom: 1rem;
+    }
+
+    .search-input,
+    .category-select {
+        position: relative;
+    }
+
+    .search-input i,
+    .category-select i {
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--text-secondary);
+        font-size: 1.2rem;
+    }
+
+    .search-input input,
+    .category-select select {
+        padding-left: 3rem;
+    }
+
+    .food-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
+        overflow: hidden;
+        transition: var(--transition-normal);
+    }
+
+    .food-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--accent-color);
+    }
+
+    .food-header {
+        padding: 1.5rem;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .food-header h5 {
+        margin: 0;
+        color: var(--text-primary);
+        margin-bottom: 0.5rem;
+    }
+
+    .category-tag {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        background: var(--accent-color);
+        color: #000;
+        border-radius: 100px;
+        font-size: 0.85rem;
+        font-weight: 500;
+    }
+
+    .nutrition-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+
+    .nutrition-item {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .nutrition-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+        background: var(--accent-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nutrition-icon i {
+        color: #000;
+        font-size: 18px;
+    }
+
+    .nutrition-content small {
+        display: block;
+        color: var(--text-secondary);
+        font-size: 0.8rem;
+    }
+
+    .nutrition-content span {
+        color: var(--text-primary);
+        font-weight: 600;
+    }
+
+    .food-footer {
+        padding: 1.5rem;
+        border-top: 1px solid var(--border-color);
+    }
+
+    .empty-state {
+        text-align: center;
+        padding: 3rem;
+        background: var(--card-bg);
+        border-radius: 16px;
+    }
+
+    .empty-state i {
+        font-size: 48px;
+        color: var(--text-secondary);
+        margin-bottom: 1rem;
+    }
+
+    .empty-state h5 {
+        color: var(--text-primary);
+        margin-bottom: 0.5rem;
+    }
+
+    .empty-state p {
+        color: var(--text-secondary);
+        margin: 0;
+    }
+</style>
 {% endblock %}

@@ -1,68 +1,115 @@
 {% extends 'calorie/base_calorie.html' %}
 
-{% block breadcrumb %}
-<li class="breadcrumb-item active">{{ food.name }}</li>
-{% endblock %}
-
 {% block calorie_content %}
-<div class="row">
+<div class="row g-4">
     <div class="col-md-6">
-        <div class="card">
+        <div class="card h-100">
             <div class="card-header">
-                <h4 class="card-title mb-0">{{ food.name }}</h4>
+                <h4 class="card-title mb-0">
+                    <i class="ph ph-cookie me-2"></i>
+                    {{ food.name }}
+                </h4>
             </div>
             <div class="card-body">
-                <h6 class="card-subtitle mb-3 text-muted">
-                    {% if food.category %}{{ food.category.name }}{% endif %}
-                </h6>
+                {% if food.category %}
+                <div class="category-badge mb-4">
+                    <i class="ph ph-folder"></i>
+                    {{ food.category.name }}
+                </div>
+                {% endif %}
                 
-                <div class="nutrition-details">
-                    <h5>Nutritional Information (per 100g)</h5>
-                    <table class="table">
-                        <tr>
-                            <th>Calories:</th>
-                            <td>{{ food.calories }}kcal</td>
-                        </tr>
-                        <tr>
-                            <th>Protein:</th>
-                            <td>{{ food.protein }}g</td>
-                        </tr>
-                        <tr>
-                            <th>Carbohydrates:</th>
-                            <td>{{ food.carbs }}g</td>
-                        </tr>
-                        <tr>
-                            <th>Fat:</th>
-                            <td>{{ food.fat }}g</td>
-                        </tr>
+                <div class="nutrition-card">
+                    <div class="nutrition-header">
+                        <h5>
+                            <i class="ph ph-chart-bar me-2"></i>
+                            Nutritional Information
+                        </h5>
+                        <span class="per-100">per 100g</span>
+                    </div>
+                    
+                    <div class="nutrition-grid">
+                        <div class="nutrition-item">
+                            <div class="nutrition-icon">
+                                <i class="ph ph-flame"></i>
+                            </div>
+                            <div class="nutrition-content">
+                                <h6>Calories</h6>
+                                <span>{{ food.calories }}kcal</span>
+                            </div>
+                        </div>
+                        
+                        <div class="nutrition-item">
+                            <div class="nutrition-icon">
+                                <i class="ph ph-barbell"></i>
+                            </div>
+                            <div class="nutrition-content">
+                                <h6>Protein</h6>
+                                <span>{{ food.protein }}g</span>
+                            </div>
+                        </div>
+                        
+                        <div class="nutrition-item">
+                            <div class="nutrition-icon">
+                                <i class="ph ph-bowl-food"></i>
+                            </div>
+                            <div class="nutrition-content">
+                                <small>Carbs</small>
+                                <span>{{ food.carbs }}g</span>
+                            </div>
+                        </div>
+                        
+                        <div class="nutrition-item">
+                            <div class="nutrition-icon">
+                                <i class="ph ph-drop"></i>
+                            </div>
+                            <div class="nutrition-content">
+                                <h6>Fat</h6>
+                                <span>{{ food.fat }}g</span>
+                            </div>
+                        </div>
+                        
                         {% if food.fiber %}
-                        <tr>
-                            <th>Fiber:</th>
-                            <td>{{ food.fiber }}g</td>
-                        </tr>
+                        <div class="nutrition-item">
+                            <div class="nutrition-icon">
+                                <i class="ph ph-wheat"></i>
+                            </div>
+                            <div class="nutrition-content">
+                                <h6>Fiber</h6>
+                                <span>{{ food.fiber }}g</span>
+                            </div>
+                        </div>
                         {% endif %}
+                        
                         {% if food.sugar %}
-                        <tr>
-                            <th>Sugar:</th>
-                            <td>{{ food.sugar }}g</td>
-                        </tr>
+                        <div class="nutrition-item">
+                            <div class="nutrition-icon">
+                                <i class="ph ph-cookie"></i>
+                            </div>
+                            <div class="nutrition-content">
+                                <h6>Sugar</h6>
+                                <span>{{ food.sugar }}g</span>
+                            </div>
+                        </div>
                         {% endif %}
-                    </table>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="col-md-6">
-        <div class="card">
+        <div class="card h-100">
             <div class="card-header">
-                <h4 class="card-title mb-0">Log Food</h4>
+                <h4 class="card-title mb-0">
+                    <i class="ph ph-plus-circle me-2"></i>
+                    Log Food
+                </h4>
             </div>
             <div class="card-body">
-                <form method="post">
+                <form method="post" class="log-form">
                     {% csrf_token %}
                     {% for field in form %}
-                        <div class="mb-3">
+                        <div class="form-group mb-4">
                             <label for="{{ field.id_for_label }}" class="form-label">
                                 {{ field.label }}
                             </label>
@@ -77,10 +124,116 @@
                             {% endif %}
                         </div>
                     {% endfor %}
-                    <button type="submit" class="btn btn-primary">Log Food</button>
+                    <button type="submit" class="btn btn-primary w-100">
+                        <i class="ph ph-check me-2"></i>
+                        Add to Log
+                    </button>
                 </form>
             </div>
         </div>
     </div>
 </div>
+
+<style>
+    .category-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        background: var(--accent-color);
+        color: #000;
+        border-radius: 8px;
+        font-weight: 500;
+    }
+
+    .nutrition-card {
+        background: var(--darker-bg);
+        border-radius: 12px;
+        padding: 1.5rem;
+    }
+
+    .nutrition-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .nutrition-header h5 {
+        margin: 0;
+        color: var(--text-primary);
+    }
+
+    .per-100 {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+    }
+
+    .nutrition-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+
+    .nutrition-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+        background: var(--card-bg);
+        border-radius: 8px;
+        transition: var(--transition-normal);
+    }
+
+    .nutrition-item:hover {
+        transform: translateY(-2px);
+    }
+
+    .nutrition-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        background: var(--accent-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nutrition-icon i {
+        font-size: 20px;
+        color: #000;
+    }
+
+    .nutrition-content h6 {
+        margin: 0;
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+    }
+
+    .nutrition-content span {
+        color: var(--text-primary);
+        font-weight: 600;
+        font-size: 1.1rem;
+    }
+
+    .log-form .form-label {
+        color: var(--text-primary);
+        font-weight: 500;
+    }
+
+    .log-form .form-control {
+        background: var(--darker-bg);
+        border: 2px solid var(--border-color);
+        color: var(--text-primary);
+    }
+
+    .log-form .form-control:focus {
+        border-color: var(--accent-color);
+        box-shadow: 0 0 0 3px rgba(255, 176, 32, 0.1);
+    }
+
+    .log-form .form-text {
+        color: var(--text-secondary);
+    }
+</style>
 {% endblock %}

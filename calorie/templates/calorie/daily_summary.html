@@ -1,50 +1,60 @@
 {% extends 'calorie/base_calorie.html' %}
 
-{% block breadcrumb %}
-<li class="breadcrumb-item active">Daily Summary</li>
-{% endblock %}
-
 {% block calorie_content %}
 <div class="row mb-4">
     <div class="col-md-12">
         <div class="card">
             <div class="card-header d-flex justify-content-between align-items-center">
                 <h4 class="mb-0">Daily Summary - {{ date|date:"F j, Y" }}</h4>
-                <form method="get" class="d-flex">
+                <form method="get" class="d-flex align-items-center">
                     <input type="date" name="date" value="{{ date|date:'Y-m-d' }}" 
-                           class="form-control me-2">
-                    <button type="submit" class="btn btn-primary">Go</button>
+                           class="form-control me-2 date-picker">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="ph ph-calendar-check me-1"></i>Go
+                    </button>
                 </form>
             </div>
             <div class="card-body">
-                <div class="row">
+                <div class="row g-4">
                     <div class="col-md-3">
-                        <div class="card bg-light">
-                            <div class="card-body text-center">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="ph ph-flame"></i>
+                            </div>
+                            <div class="stat-content">
                                 <h6>Calories</h6>
                                 <h3>{{ totals.calories|floatformat:0 }}</h3>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="card bg-light">
-                            <div class="card-body text-center">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="ph ph-barbell"></i>
+                            </div>
+                            <div class="stat-content">
                                 <h6>Protein</h6>
                                 <h3>{{ totals.protein|floatformat:1 }}g</h3>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="card bg-light">
-                            <div class="card-body text-center">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="ph ph-bowl-food"></i>
+                            </div>
+                            <div class="stat-content">
                                 <h6>Carbs</h6>
                                 <h3>{{ totals.carbs|floatformat:1 }}g</h3>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="card bg-light">
-                            <div class="card-body text-center">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="ph ph-drop"></i>
+                            </div>
+                            <div class="stat-content">
                                 <h6>Fat</h6>
                                 <h3>{{ totals.fat|floatformat:1 }}g</h3>
                             </div>
@@ -57,14 +67,30 @@
 </div>
 
 {% for meal_type, meal_logs in meals.items %}
-<div class="card mb-4">
-    <div class="card-header">
-        <h5 class="mb-0">{{ meal_type|title }}</h5>
+<div class="card mb-4 meal-card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <h5 class="mb-0">
+            <i class="ph {% if meal_type == 'Breakfast' %}ph-coffee
+                      {% elif meal_type == 'Lunch' %}ph-fork-knife
+                      {% elif meal_type == 'Dinner' %}ph-bowl-food
+                      {% elif meal_type == 'Snacks' %}ph-cookie
+                      {% else %}ph-hamburger{% endif %} me-2"></i>
+            {{ meal_type|title }}
+        </h5>
+        <span class="meal-total">
+            {{ meal_logs|length }} items • 
+            {% with total_calories=0 %}
+                {% for log in meal_logs %}
+                    {% with total_calories=total_calories|add:log.calories_consumed %}{% endwith %}
+                {% endfor %}
+                {{ total_calories|floatformat:0 }} kcal
+            {% endwith %}
+        </span>
     </div>
     <div class="card-body">
         {% if meal_logs %}
             <div class="table-responsive">
-                <table class="table">
+                <table class="table align-middle">
                     <thead>
                         <tr>
                             <th>Food</th>
@@ -79,7 +105,14 @@
                     <tbody>
                         {% for log in meal_logs %}
                         <tr>
-                            <td>{{ log.food_item.name }}</td>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <div class="food-icon me-2">
+                                        <i class="ph ph-cookie"></i>
+                                    </div>
+                                    {{ log.food_item.name }}
+                                </div>
+                            </td>
                             <td>{{ log.amount }}g</td>
                             <td>{{ log.calories_consumed|floatformat:0 }}</td>
                             <td>{{ log.protein_consumed|floatformat:1 }}g</td>
@@ -92,9 +125,101 @@
                 </table>
             </div>
         {% else %}
-            <p class="text-muted">No foods logged for {{ meal_type }}.</p>
+            <div class="empty-meal">
+                <i class="ph ph-plus-circle"></i>
+                <p>No foods logged for {{ meal_type }}.</p>
+                <a href="{% url 'calorie:food_list' %}" class="btn btn-primary btn-sm">
+                    Add Food
+                </a>
+            </div>
         {% endif %}
     </div>
 </div>
 {% endfor %}
+<style>
+    .stat-card {
+        background: var(--gradient-card);
+        border-radius: 12px;
+        padding: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        transition: var(--transition-normal);
+    }
+
+    .stat-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .stat-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        background: var(--accent-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .stat-icon i {
+        font-size: 24px;
+        color: #000;
+    }
+
+    .stat-content h6 {
+        color: var(--text-secondary);
+        margin-bottom: 0.25rem;
+    }
+
+    .stat-content h3 {
+        color: var(--text-primary);
+        margin: 0;
+        font-weight: 600;
+    }
+
+    .date-picker {
+        background: var(--darker-bg);
+        border-color: var(--border-color);
+        color: var(--text-primary);
+    }
+
+    .meal-card .card-header {
+        background: var(--gradient-primary);
+    }
+
+    .meal-total {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+    }
+
+    .food-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        background: var(--accent-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .food-icon i {
+        color: #000;
+    }
+
+    .empty-meal {
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .empty-meal i {
+        font-size: 48px;
+        color: var(--text-secondary);
+        margin-bottom: 1rem;
+    }
+
+    .empty-meal p {
+        color: var(--text-secondary);
+        margin-bottom: 1rem;
+    }
+</style>
 {% endblock %}
