@@ -66,6 +66,8 @@ INSTALLED_APPS = [
     #exercises settings
     "rest_framework",
     "corsheaders",
+    'ckeditor',
+    'ckeditor_uploader',
 
     # local apps
     "accounts",
@@ -215,3 +217,12 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10
 }
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'height': 300,
+        'width': '100%',
+    },
+}
+CKEDITOR_IMAGE_BACKEND = "pillow"
+CKEDITOR_UPLOAD_PATH = "uploads/"
