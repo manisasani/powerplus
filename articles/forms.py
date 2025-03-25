@@ -1,17 +1,17 @@
 from django import forms
-from .models import Category, Article, Comment, ArticleRating
+from .models import Article, Comment, ArticleRating
 
 class ArticleForm(forms.ModelForm):
     class Meta:
         model = Article
-        fields = ['title', 'content', 'summary', 'featured_in', 'category', 'status', 'is_featured']
+        fields = ['title', 'content', 'summary', 'featured_image', 'category', 'status', 'is_featured']
         widgets = {
             'title': forms.TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Enter article title',
+                'placeholder': 'Enter article title'
             }),
             'summary': forms.Textarea(attrs={
-                'class':'form-control',
+                'class': 'form-control',
                 'rows': 3,
                 'placeholder': 'Enter a brief summary'
             }),
@@ -20,8 +20,9 @@ class ArticleForm(forms.ModelForm):
             }),
             'status': forms.Select(attrs={
                 'class': 'form-control'
-            })
+            }),
         }
+
     def clean_featured_image(self):
         image = self.cleaned_data.get('featured_image')
         if image:
@@ -38,7 +39,6 @@ class ArticleForm(forms.ModelForm):
                     f"Unsupported file extension. Allowed extensions are: {', '.join(valid_extensions)}"
                 )
         return image
-    
 
     def clean_summary(self):
         summary = self.cleaned_data.get('summary')
@@ -55,16 +55,18 @@ class CommentForm(forms.ModelForm):
             'text': forms.Textarea(attrs={
                 'class': 'form-control',
                 'rows': 4,
-                'placeholder': 'Write you comment here...'
+                'placeholder': 'Write your comment here...'
             })
         }
+
     def clean_text(self):
         text = self.cleaned_data.get('text')
-        if len(text) < 10:
+        if len(text) < 5:
             raise forms.ValidationError("Comment must be at least 10 characters long")
         if len(text) > 1000:
             raise forms.ValidationError("Comment must be no more than 1000 characters")
         return text
+
 
 class RatingForm(forms.ModelForm):
     class Meta:
@@ -81,6 +83,6 @@ class RatingForm(forms.ModelForm):
 
     def clean_score(self):
         score = self.cleaned_data.get('score')
-        if score < 1 or score> 5:
-            raise forms.ValidationError('Rating must be between 1 and 5')
+        if score < 1 or score > 5:
+            raise forms.ValidationError("Rating must be between 1 and 5")
         return score

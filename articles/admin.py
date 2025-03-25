@@ -56,8 +56,17 @@ class ArticleAdmin(admin.ModelAdmin):
 
     def display_rating(self, obj):
         avg_rating = obj.average_rating
-        stars = '★' * int(avg_rating) + '☆' * (5 - int(avg_rating))
-        return format_html('<span style="color: #FFD700;">{}</span> ({:.1f})', stars, avg_rating)
+        if avg_rating == 0:
+            return "No ratings"
+            
+        avg_rating = float(avg_rating)
+        stars = '★' * int(round(avg_rating))
+        empty_stars = '☆' * (5 - int(round(avg_rating)))
+        
+        return format_html(
+            '<span style="color: #FFD700;">{}</span><span style="color: #C0C0C0;">{}</span> ({:.1f})',
+            stars, empty_stars, avg_rating
+        )
     display_rating.short_description = 'Rating'
 
     def save_model(self, request, obj, form, change):

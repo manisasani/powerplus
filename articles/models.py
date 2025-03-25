@@ -101,9 +101,9 @@ class Article(models.Model):
     @property
     def average_rating(self):
         ratings = self.ratings.all()
-        if ratings:
-            return sum(rating.score for rating in ratings) / len(ratings)
-        return 0
+        if not ratings:
+            return 0.0
+        return float(sum(rating.score for rating in ratings)) / len(ratings)
     
 
 class ArticleRating(models.Model):
@@ -135,7 +135,7 @@ class Comment(models.Model):
     )
     text = models.TextField()
     is_approved = models.BooleanField(
-        default=False
+        default=True
     )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(

@@ -60,8 +60,7 @@ class ArticleDetailView(DetailView):
         
         # Comments
         context['comments'] = article.comments.filter(
-            is_approved=True, 
-            parent=None
+        parent=None
         ).order_by('-created_at')
         context['comment_form'] = CommentForm()
         
@@ -159,28 +158,28 @@ class ArticleSearchView(ListView):
         return context
 
 @login_required
-def add_comment(request, article_id):
-    article = get_object_or_404(Article, id=article_id)
+def add_comment(request, slug):
+    article = get_object_or_404(Article, slug=slug)
     if request.method == 'POST':
+        print("POST data:", request.POST) 
         form = CommentForm(request.POST)
         if form.is_valid():
+            print("Form is valid") 
             comment = form.save(commit=False)
             comment.article = article
             comment.user = request.user
-            
-            # Handle reply to comment
-            parent_id = request.POST.get('parent_id')
-            if parent_id:
-                parent = get_object_or_404(Comment, id=parent_id)
-                comment.parent = parent
-                
+            comment.is_approved = True
             comment.save()
-            return redirect('article_detail', slug=article.slug)
-    return redirect('article_detail', slug=article.slug)
+            print("Comment saved:", comment.id)
+            return redirect('articles:article_detail', slug=article.slug)
+        else:
+            print("Form errors:", form.errors) 
+    return redirect('articles:article_detail', slug=article.slug)
+
 
 @login_required
-def rate_article(request, article_id):
-    article = get_object_or_404(Article, id=article_id)
+def rate_article(request, slug): 
+    article = get_object_or_404(Article, slug=slug)  
     if request.method == 'POST':
         form = RatingForm(request.POST)
         if form.is_valid():
@@ -189,4 +188,12 @@ def rate_article(request, article_id):
                 user=request.user,
                 defaults={'score': form.cleaned_data['score']}
             )
-    return redirect('article_detail', slug=article.slug)
+    return redirect('articles:article_detail', slug=article.slug)
+
+class CategoryListView(ListView):
+    model = Category
+    template_name = 'articles/category_list.html'
+    context_object_name = 'categories'
+    
+    def get_queryset(self):
+        return Category.objects.all().prefetch_related('articles')
