@@ -31,6 +31,41 @@
 {% endblock %}
 
 {% block content %}
+<!-- Fixed Navigation Buttons -->
+<div class="fixed top-24 left-8 flex items-center space-x-4 z-50">
+    <!-- Back Button -->
+    <button onclick="history.back()" 
+            class="group relative flex items-center justify-center w-12 h-12 rounded-full bg-black/30 backdrop-blur-md border border-gold-500/30 hover:border-gold-500 transition-all duration-300">
+        <div class="absolute inset-0 bg-gold-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <svg xmlns="http://www.w3.org/2000/svg" 
+             class="h-6 w-6 text-gold-500 group-hover:text-black relative z-10 transform group-hover:scale-110 transition-all duration-300" 
+             fill="none" 
+             viewBox="0 0 24 24" 
+             stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        <span class="absolute right-0 transform translate-x-full bg-black/80 text-gold-500 px-3 py-1 rounded-lg text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 ml-2 pointer-events-none whitespace-nowrap">
+            Go Back
+        </span>
+    </button>
+
+    <!-- Home Button -->
+    <a href="/" 
+       class="group relative flex items-center justify-center w-12 h-12 rounded-full bg-black/30 backdrop-blur-md border border-gold-500/30 hover:border-gold-500 transition-all duration-300">
+        <div class="absolute inset-0 bg-gold-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <svg xmlns="http://www.w3.org/2000/svg" 
+             class="h-6 w-6 text-gold-500 group-hover:text-black relative z-10 transform group-hover:scale-110 transition-all duration-300" 
+             fill="none" 
+             viewBox="0 0 24 24" 
+             stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+        </svg>
+        <span class="absolute right-0 transform translate-x-full bg-black/80 text-gold-500 px-3 py-1 rounded-lg text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 ml-2 pointer-events-none whitespace-nowrap">
+            Home Page
+        </span>
+    </a>
+</div>
+
 <!-- Navigation -->
 <nav class="bg-black border-b border-gold-700/30">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

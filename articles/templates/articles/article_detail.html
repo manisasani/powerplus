@@ -45,34 +45,12 @@
                         <span class="ml-2">{{ article.view_count }}k views</span>
                     </div>
                     <div class="flex items-center">
-                        <div class="rating-stars" data-rating="{{ article.average_rating }}">
-                            {% if user.is_authenticated %}
-                            <form id="rating-form" method="POST" action="{% url 'articles:rate_article' article.slug %}" class="flex items-center">
-                                {% csrf_token %}
-                                <div class="flex space-x-1">
-                                    {% for i in "12345" %}
-                                    <button type="button" class="star-button" data-value="{{ forloop.counter }}">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 {% if article.average_rating >= forloop.counter %}text-gold-500{% else %}text-gray-500{% endif %} hover:text-gold-500 transition-colors duration-200" 
-                                            viewBox="0 0 20 20" fill="currentColor">
-                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-                                        </svg>
-                                    </button>
-                                    {% endfor %}
-                                </div>
-                                <input type="hidden" name="score" id="rating-score" value="{{ user_rating.score|default:0 }}">
-                            </form>
-                            {% else %}
-                            <div class="flex space-x-1">
-                                {% for i in "12345" %}
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 {% if article.average_rating >= forloop.counter %}text-gold-500{% else %}text-gray-500{% endif %}" 
-                                    viewBox="0 0 20 20" fill="currentColor">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-                                </svg>
-                                {% endfor %}
-                            </div>
-                            {% endif %}
-                            <span class="ml-2 text-gray-400">({{ article.average_rating|floatformat:1 }})</span>
-                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold-500" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                        </svg>
+                        <span class="ml-2">{{ article.average_rating|floatformat:1 }}</span>
                     </div>
                 </div>
             </div>
@@ -323,54 +301,5 @@
         }
         return cookieValue;
     }
-    // Rating System
-    document.addEventListener('DOMContentLoaded', function() {
-        const ratingForm = document.getElementById('rating-form');
-        const ratingScore = document.getElementById('rating-score');
-        const stars = document.querySelectorAll('.star-button');
-        
-        if (ratingForm) {
-            // نمایش امتیاز فعلی کاربر
-            const currentRating = parseInt(ratingScore.value) || 0;
-            updateStars(currentRating);
-
-            // اضافه کردن event listener به ستاره‌ها
-            stars.forEach(star => {
-                // Hover effect
-                star.addEventListener('mouseover', function() {
-                    const value = parseInt(this.dataset.value);
-                    highlightStars(value);
-                });
-
-                // Click event
-                star.addEventListener('click', function() {
-                    const value = parseInt(this.dataset.value);
-                    ratingScore.value = value;
-                    updateStars(value);
-                    ratingForm.submit();
-                });
-            });
-
-            // Reset stars on mouse leave
-            ratingForm.addEventListener('mouseleave', function() {
-                const currentRating = parseInt(ratingScore.value) || 0;
-                updateStars(currentRating);
-            });
-        }
-
-        function highlightStars(count) {
-            stars.forEach((star, index) => {
-                star.querySelector('svg').classList.toggle('text-gold-500', index < count);
-                star.querySelector('svg').classList.toggle('text-gray-500', index >= count);
-            });
-        }
-
-        function updateStars(count) {
-            highlightStars(count);
-            if (ratingScore) {
-                ratingScore.value = count;
-            }
-        }
-    });
 </script>
 {% endblock %}

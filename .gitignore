@@ -5,9 +5,9 @@
 __pycache__
 db.sqlite3
 # Media files
-media/
 media/*
 !media/.gitkeep
+!media/uploads/
 
 # Backup files # 
 *.bak 
@@ -174,3 +174,12 @@ ENV/
 *.swp
 *.swo
 .DS_Store
+
+# Local development settings
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Debug logs
+debug.log
