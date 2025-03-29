@@ -1,5 +1,5 @@
-PowerPlus - Comprehensive Fitness & Nutrition Management System 💪
-PowerPlus Homepage
+![image](https://github.com/user-attachments/assets/d6459972-adc1-433f-b30e-cdeb33299066)PowerPlus - Comprehensive Fitness & Nutrition Management System 💪
+
 
 📌 Project Overview
 PowerPlus is a comprehensive fitness platform that provides users with fully personalized workout and nutrition management solutions. The system consists of 5 core applications, all developed with Django.
