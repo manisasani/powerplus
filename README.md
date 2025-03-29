@@ -67,24 +67,8 @@ Python 3.10+
 
 PostgreSQL
 
-Virtualenv (recommended)
+Virtualenv
 
-Installation
-bash
-Copy
-git clone https://github.com/yourusername/powerplus.git
-cd powerplus
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
-python manage.py migrate
-python manage.py runserver
-📝 Technical Documentation
-Configuration: config.py
-
-Core Models: Defined in each app
-
-APIs: Implemented with Django REST Framework
 
 📊 Project Stats
 5 independent apps
