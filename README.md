@@ -96,6 +96,7 @@ APIs: Implemented with Django REST Framework
 Comprehensive test coverage
 
 📬 Contact
-For more information, please email example@powerplus.com.
+For more information, please email manisasani2005@gmail.com
+
 
 🔄 Last Updated: 2023-11-15
